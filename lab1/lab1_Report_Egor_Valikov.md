@@ -292,7 +292,7 @@ Password: /SroByRvx+m2QpMsL2LvcKX/HgBUVRKOgTmpq0LR8y4=
 
 2. Create a new repository on `http://gitlab.test.local`
 
-![image](https://github.com/user-attachments/assets/e7be7ce8-9abf-4428-b304-b7581938cc2c)
+![image](https://github.com/user-attachments/assets/de6e6b9a-489a-48e3-852d-c37e15fa6750)
 
 3. Cloning the repository locally
 
@@ -393,7 +393,7 @@ CONTAINER ID   IMAGE                         COMMAND                  CREATED   
 7539d184486a   gitlab/gitlab-ce:latest       "/assets/wrapper"        2 hours ago      Up 2 hours (healthy)   0.0.0.0:22->22/tcp, :::22->22/tcp, 0.0.0.0:80->80/tcp, :::80->80/tcp, 0.0.0.0:443->443/tcp, :::443->443/tcp   zDragonLORD1010-gitlab
 ```
 
-![image](https://github.com/user-attachments/assets/a803ebd6-2655-4ed7-bad6-5f933ae8394f)
+![image](https://github.com/user-attachments/assets/81768b06-3a78-437c-9485-5091bf834e20)
 
 ## Task 2 Results:
 
@@ -453,11 +453,11 @@ git commit -m "Final"
 git push origin master
 ```
 
-![image](https://github.com/user-attachments/assets/722208dc-3c28-48fe-bbdf-c5e09614586e)
+![image](https://github.com/user-attachments/assets/03ae8ad6-37db-44b3-8f4e-4f903572d6e4)
 
-![image](https://github.com/user-attachments/assets/3ef9dd19-eb2a-493d-907d-cc35543e6a49)
+![image](https://github.com/user-attachments/assets/17e0d307-ecd0-4259-9efa-e67d02346241)
 
-![image](https://github.com/user-attachments/assets/da9a1f56-67b0-40f5-963d-fba71f1f63b9)
+![image](https://github.com/user-attachments/assets/2be8d5ef-0364-4125-a81b-a2fce6583592)
 
 --- 
 
