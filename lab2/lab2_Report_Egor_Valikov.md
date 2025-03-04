@@ -38,7 +38,7 @@ I Created a Python virtual environment as needed
 
 ### After that, I researched my findings
 
-1. **Severity: LOW**
+#### 1. Severity: LOW
 
 **CWE-78:** Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection')
 
@@ -57,15 +57,57 @@ program = "/bin/sh"
 username = "malicious_input"
 ```
 
-This would cause the system to execute `malicious_input`, as `subprocess.run()` would treat the full command as valid input.
+This would cause the system to execute `malicious_input`, and `subprocess.run()` would treat the full command as valid input.
 
 **Mitigation:**
 
-For example, use `shlex.quote()` for input sanitization to ensure that user input is treated as a literal string:
+For example, use `shlex.quote()` for input sanitization to ensure that user input is treated as a string:
 
 ```bash
 program = sys.argv[1]
 username = shlex.quote(sys.argv[2])
 ```
 
-2. **Severity: MEDIUM**
+#### 2. Severity: MEDIUM
+
+**CWE-400:** Uncontrolled Resource Consumption
+
+![image](https://github.com/user-attachments/assets/e9466c99-ecc5-404d-b4e0-a90c2723e287)
+
+The `request_without_timeout` refers to the fact that the `requests.get()` call is made without specifying a timeout. 
+
+![image](https://github.com/user-attachments/assets/eb140ac4-4980-4b19-8098-5f3e091c9c85)
+
+This can potentially lead to problems where the request freezes indefinitely if the server is not responding, resulting in a denial of service.
+
+**Mitigation:**
+
+I think the simplest thing to do to prevent this problem is to modify the `requests.get()` call by including the `timeout` parameter in it:
+
+```bash
+r = requests.get('http://127.0.1.1:5000/api/post/{}'.format(username), timeout=5)
+```
+
+#### 2. Severity: HIGH
+
+**CWE-94:** Improper Control of Generation of Code ('Code Injection')
+
+![image](https://github.com/user-attachments/assets/e48b17ad-4697-42b8-a228-5548917a0a37)
+
+The application is running with `debug=True`, which exposes the Werkzeug debugger.
+
+![image](https://github.com/user-attachments/assets/f9176e52-0d88-4e99-8c87-736bc6f58be7)
+
+An interactive Python shell opens in the browser when the program raises an exception, enabling unauthorized code execution. 
+
+**Mitigation:**
+
+In my opinion, to fix this problem we can simply set the `debug=False` value in the application (or use environment variables to control it):
+
+```bash
+app.run(debug=False, host='127.0.1.1', ssl_context=('/tmp/acme.cert', '/tmp/acme.key'))
+```
+
+
+
+
