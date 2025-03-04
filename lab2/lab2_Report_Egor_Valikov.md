@@ -203,4 +203,105 @@ As I understand it, the reason why this was flagged as a vulnerability is that `
 
 ## 1.3 `njsscan`
 
+### Firstly I install `njsscan` and clone the DVNA Repository
 
+I had some problems with the installation, because `njsscan` did not want to be installed through `snap`, `apt`, or `npm`. However, in the end, I was able to install njsscan via `pip` (although the attempts were unsuccessful before that).
+
+![image](https://github.com/user-attachments/assets/d3286cfd-d560-44ea-8d41-560e703c855d)
+
+![image](https://github.com/user-attachments/assets/bc10c5d1-478f-4c2c-a4e1-fe7b9e23fb6b)
+
+![image](https://github.com/user-attachments/assets/5ac06675-7943-4ef6-9cdf-2b64d9aeeef8)
+
+![image](https://github.com/user-attachments/assets/82bc01bb-2910-44ac-92e5-e4e4498afe88)
+
+![image](https://github.com/user-attachments/assets/fcfc2929-ffb9-4ec4-871c-8b1ab2a29f27)
+
+![image](https://github.com/user-attachments/assets/1ed47236-d47b-46b0-9118-023f2d02eda9)
+
+![image](https://github.com/user-attachments/assets/56c107db-9d3e-46ab-b570-6ae9e465445a)
+
+### Next, I scanned the repository using `njsscan`
+
+![image](https://github.com/user-attachments/assets/c94dfa5e-0abb-4fcd-a880-a902ee406f75)
+
+### Here's what I found in my `report.html`
+
+![image](https://github.com/user-attachments/assets/6cd171df-5d51-4658-876c-a79d3c28e08a)
+
+![image](https://github.com/user-attachments/assets/5c8ee26b-1c3c-4f05-8988-9ec1b7f51f53)
+
+![image](https://github.com/user-attachments/assets/a62072f9-b4c5-48ff-b886-c07d004f9365)
+
+### After that, I researched my findings
+
+The full `report.html` can be found at the link: https://github.com/zDragonLORD1010/Secure-System-Development-/blob/main/lab2/task1_njsscan/report.html
+
+#### 1. ERROR Finding
+
+**CWE-611:** Improper Restriction of XML External Entity Reference
+
+![image](https://github.com/user-attachments/assets/6cd171df-5d51-4658-876c-a79d3c28e08a)
+
+The application uses `parseXmlString()` with the `{noent: true}` option to process user-controlled XML data. This makes it possible to resolve foreign entities, which may result in XXE assaults, which give attackers the ability to access any file, carry out SSRF, or carry out DoS attacks.
+
+**Mitigation:**
+
+I recommend disable entity processing by setting `{noent: false}`:
+
+```bash
+var products = libxmljs.parseXmlString(req.files.products.data.toString('utf8'), {noent: false, noblanks: true});
+```
+
+#### 2. WARNING Finding
+
+**CWE-23:** Relative Path Traversal
+
+![image](https://github.com/user-attachments/assets/5c8ee26b-1c3c-4f05-8988-9ec1b7f51f53)
+
+The `res.render()` function is used with untrusted user input. If an attacker manipulates this input, it may lead to arbitrary file read vulnerabilities.
+
+For example, it might be something like this:
+
+```
+?legacy=../../etc/passwd
+```
+
+**Mitigation:**
+
+I recommend whitelisting acceptable values for the `req.query.legacy query`, and processing the input data to remove `../` or other malicious characters:
+
+```bash
+const whitelist = ['bulkproducts', 'dashboard'];
+
+// If statement checks whitelist and processing the input data
+
+res.render(`app/${app_value}`);
+```
+
+#### 3. INFO Finding
+
+**CWE-613:** Insufficient Session Expiration
+
+![image](https://github.com/user-attachments/assets/a62072f9-b4c5-48ff-b886-c07d004f9365)
+
+Because there is no maxAge setting in the session configuration, session cookies are always there. This increases the risk of session hijacking.
+
+**Mitigation:**
+
+I recommend setting the `maxAge` value to force session expiration, use `HttpOnly: true` to prevent XSS attacks, and use `secure: true` for HTTPS environments only.
+
+```bash
+app.use(session({
+  secret: 'keyboard cat',
+  resave: true,
+  saveUninitialized: false,
+  cookie: { 
+    secure: true,  // Cookies are sent only over HTTPS protocol
+    httpOnly: true, // Prevents JavaScript access to cookies
+    maxAge: 3600000 // The session ends after 1 hour
+  }
+}));
+```
+
+## Task 2 - Web Security Mini Labs
