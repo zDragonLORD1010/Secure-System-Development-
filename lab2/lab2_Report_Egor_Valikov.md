@@ -285,7 +285,7 @@ res.render(`app/${app_value}`);
 
 ![image](https://github.com/user-attachments/assets/a62072f9-b4c5-48ff-b886-c07d004f9365)
 
-Because there is no maxAge setting in the session configuration, session cookies are always there. This increases the risk of session hijacking.
+Because there is no `maxAge` setting in the session configuration, session cookies are always there. This increases the risk of session hijacking.
 
 **Mitigation:**
 
@@ -305,3 +305,67 @@ app.use(session({
 ```
 
 ## Task 2 - Web Security Mini Labs
+
+### Installing and Setup `BurpSuite`
+
+There were also problems with installing and configuring `BurpSuite`. I was able to install the app, but I couldn't configure it. I changed the proxy settings as needed in different browsers, but all my attempts were unsuccessful. So I decided to try to do the checks where I can manually. (I understand that I won't get a full score for these assignments, but I want to demonstrate some knowledge in this area, hoping to get at least some kind of score)
+
+![image](https://github.com/user-attachments/assets/ef8ad8d0-e87a-44bf-a2ee-065aa80ee329)
+
+![image](https://github.com/user-attachments/assets/9c1c6cc8-9da0-4084-bdcd-bee534038f07)
+
+![image](https://github.com/user-attachments/assets/5d03353f-8d09-41f5-9cbb-4b310b022739)
+
+![image](https://github.com/user-attachments/assets/cae3eeca-3c7d-4d69-a33b-5e8d0b892236)
+
+![image](https://github.com/user-attachments/assets/45b9256e-7680-4530-90c6-57cbef8adb7a)
+
+![image](https://github.com/user-attachments/assets/e741d901-354e-4c78-b5cf-62943084c314)
+
+![image](https://github.com/user-attachments/assets/38839318-cdd4-401e-9a1e-1e332b3e7b83)
+
+### Mini labs
+
+#### Cross Site Scripting
+
+To exploit the XSS vulnerability, I embedded the script in the input line and I successfully managed to run it
+
+![image](https://github.com/user-attachments/assets/38ab4744-bf83-4d55-9b4f-d6412e98da1a)
+
+![image](https://github.com/user-attachments/assets/45e8aad8-6097-4b8f-b875-1ec6c0254b01)
+
+![image](https://github.com/user-attachments/assets/eefc9a86-38a9-456a-8044-1d2796306776)
+
+
+#### Path Traversal, SQL Injection, Command Injection
+
+Unfortunately, I cannot describe in detail the list of actions that need to be performed in these three points. However, I guess that everything should be turned around by substituting requests and values in requests in BurpSuite.
+
+For example, when using the Command Injection vulnerability, it is worth trying to transfer the vulnerable script after the values 50 and 150 (which initially indicated the size). By analogy, it would be worthwhile to change the value fields for Path Traversal and SQL Injection, but here it's hard for me to say anything more without using BurpSuite.
+
+![image](https://github.com/user-attachments/assets/60076a91-c95f-49e6-a84e-6177edaa7ef2)
+
+![image](https://github.com/user-attachments/assets/42c49364-659e-4f03-99e6-0bcbf92d54b8)
+
+![image](https://github.com/user-attachments/assets/aa6118da-ecdd-486e-a53e-e0fbc9c7ff7b)
+
+#### File Upload
+
+In this assignment, I was trying to upload a file `malicious.html` with a malicious script that I used in Cross Site Scripting, however, I failed to get the proper result. According to the plan, after downloading the malicious file, I had to go to the place where all the downloaded files are stored and select my own (http://127.0.0.1:5000/uploads/malicious.html
+), and then the attack worked.
+
+I also tried to download the `shell.jpg` file to use commands through the website. In the `shell.jpg` the following should have been recorded:
+
+```
+<?php system($_GET['cmd']); ?>
+```
+
+According to the plan, by following links http://127.0.0.1:5000/uploads/shell.jpg?cmd=ls and http://127.0.0.1:5000/uploads/shell.jpg?cmd=cat%20/etc/passwd
+, I could execute ls or cat commands, as well as many others by analogy.
+
+![image](https://github.com/user-attachments/assets/609bd7d7-c2f0-488c-91f8-324f3856b776)
+
+![image](https://github.com/user-attachments/assets/227b8087-c36f-45f2-a032-9fe0589de753)
+
+![image](https://github.com/user-attachments/assets/52228dc6-1877-498c-8ffe-f089ea70eb54)
+
