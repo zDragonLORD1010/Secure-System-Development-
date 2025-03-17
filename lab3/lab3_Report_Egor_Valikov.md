@@ -172,3 +172,77 @@ I found the following vulnerabilities here (The description is taken from the CW
 Verifying the output:
 
 ![image](program4_img/Screenshot%20From%202025-03-17%2015-41-46.png)
+
+## Task 3 - Vulnerable HashMap Library
+
+First of all, I copied `hash.c` and `hash.h` files, compiled and tested the program for performance. I got the desired output.
+
+![image](hash_img/Screenshot%20From%202025-03-17%2015-48-33.png)
+
+### First `valgrind` analysis
+
+I analyzed `hash.c` using `valgrind` and got the following output:
+
+**Link to the full report:** [`valgrind_output_hash.txt`](https://github.com/zDragonLORD1010/Secure-System-Development-/blob/main/lab3/valgrind_output_hash.txt)
+
+![image](hash_img/Screenshot%20From%202025-03-17%2015-49-25.png)
+
+### Implement better practices and fixes for `hash.c`
+
+After I compiled the code, I got some errors in the output (screenshot attached earlier) which I started working on. At the same time, I found possible code vulnerabilities and fixed them.
+
+The first thing I did was start working on the `HashIndex()` function. It contained a potential vulnerability [CWE-125: Out-of-bounds Read](https://cwe.mitre.org/data/definitions/125):
+
+- **Description:** A function returns the address of a stack variable, which will cause unintended program behavior, typically in the form of a crash.
+- The condition `for (char* c = key; c; c++)` iterates line-by-line incorrectly, so I change the loop to iterate line-by-line correctly:
+
+![image](hash_img/Screenshot%20From%202025-03-17%2015-54-17.png)
+
+I left the `HashInit()` function almost unchanged, and modified the `HashAdd()` function to avoid the possible vulnerability of [CWE-476: NULL Pointer Dereference](https://cwe.mitre.org/data/definitions/476):
+
+- **Description:** The product dereferences a pointer that it expects to be valid but is NULL.
+- - To avoid this error, I set a check `(!map || !value)`.
+
+![image](hash_img/Screenshot%20From%202025-03-17%2015-55-51.png)
+
+In the `HashFind()`, `HashDelete()`, `HashDump()` functions, as well as in the `HashAdd()` function, I suspected a possible vulnerability [CWE-476: NULL Pointer Dereference](https://cwe.mitre.org/data/definitions/476) and fixed it in the same way.
+
+![image](hash_img/Screenshot%20From%202025-03-17%2015-56-41.png)
+
+![image](hash_img/Screenshot%20From%202025-03-17%2015-57-35.png)
+
+I also found a potential vulnerability in `HashDump()` function besides [CWE-476: NULL Pointer Dereference](https://cwe.mitre.org/data/definitions/476). [CWE-134: Use of Externally-Controlled String Format](https://cwe.mitre.org/data/definitions/134):
+
+- **Description:** The product uses a function that accepts a format string as an argument, but the format string originates from an external source.
+- To fix it, I used `printf("%s\n", val->KeyName)` instead `printf(val->KeyName)`.
+
+![image](hash_img/Screenshot%20From%202025-03-17%2015-58-28.png)
+
+In the `main()` function, I applied best practices and also fixed possible vulnerabilities that I had encountered before. Moreover, I fixed a potential vulnerability [CWE-401: Missing Release of Memory after Effective Lifetime](https://cwe.mitre.org/data/definitions/401):
+
+- **Description:** The product does not sufficiently track and release allocated memory after it has been used, which slowly consumes remaining memory.
+- I changed the `main()` function to release all dynamically allocated items.
+
+![image](hash_img/Screenshot%20From%202025-03-17%2016-03-39.png)
+
+![image](hash_img/Screenshot%20From%202025-03-17%2016-07-13.png)
+
+![image](hash_img/Screenshot%20From%202025-03-17%2016-08-15.png)
+
+I commented out one `printf("HashAdd(map, '%s')\n", pv1->KeyName)` and one `HashAdd(map, pv1)` to avoid the following error. `hash.c` programs worked indefinitely if everything remained in place (I thought it was a typo because the same phrase was written twice).
+
+![image](hash_img/Screenshot%20From%202025-03-17%2016-18-44.png)
+
+### Second `valgrind` analysis
+
+I analyzed `hash.c` using `valgrind` and got the following output:
+
+**Link to the full report:** [`valgrind_output_hash_fix.txt`](https://github.com/zDragonLORD1010/Secure-System-Development-/blob/main/lab3/valgrind_output_hash_fix.txt)
+
+![image](hash_img/Screenshot%20From%202025-03-17%2016-10-32.png)
+
+
+
+
+
+
