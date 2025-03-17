@@ -78,7 +78,7 @@ I analyzed `program2.c` using `valgrind` and got the following output:
 
 ### Explanation of `valgrind` output
 
-I found the following vulnerabilities here (The description is taken from the CWE website: [CWE-908]([https://cwe.mitre.org/data/definitions/122](https://cwe.mitre.org/data/definitions/908), [CWE-416](https://cwe.mitre.org/data/definitions/416.html), [CWE-401](https://cwe.mitre.org/data/definitions/401)):
+I found the following vulnerabilities here (The description is taken from the CWE website: [CWE-908](https://cwe.mitre.org/data/definitions/908), [CWE-416](https://cwe.mitre.org/data/definitions/416), [CWE-401](https://cwe.mitre.org/data/definitions/401)):
 
 **1. CWE-908: Use of Uninitialized Resource**
 
