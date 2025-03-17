@@ -78,18 +78,20 @@ I analyzed `program2.c` using `valgrind` and got the following output:
 
 ### Explanation of `valgrind` output
 
-I found the following vulnerabilities here (The description is taken from the CWE website: [CWE-908](https://cwe.mitre.org/data/definitions/908), [CWE-416](https://cwe.mitre.org/data/definitions/416), [CWE-401](https://cwe.mitre.org/data/definitions/401)):
+I found the following vulnerabilities here (The description is taken from the CWE website: [CWE-416](https://cwe.mitre.org/data/definitions/416)):
 
-**1. CWE-908: Use of Uninitialized Resource**
-
-- **Description:** The product uses or accesses a resource that has not been initialized.
-
-**2. CWE-416: Use After Free**
+**1. CWE-416: Use After Free**
 
 - **Description:** The product reuses or references memory after it has been freed. At some point afterward, the memory may be allocated again and saved in another pointer, while the original pointer references a location somewhere within the new allocation. Any operations using the original pointer are no longer valid because the memory "belongs" to the code that operates on the new pointer.
+- In our case, the `work()` function is free `arr`, but `program2()` is still trying to access it. Therefore, I suggest moving `free(arr)` to the end of the `program2()` function and checking `arr` at the beginning, just in case. Also fixed `memset(arr, 0, sizeof(*arr))` to `memset(arr, 0, N * sizeof(*arr))` (I'm not sure if this refers to a vulnerability like CWE-122, so I just fixed it.).
 
-**3. CWE-401: Missing Release of Memory after Effective Lifetime**
+### Program 2 after fix
 
-- **Description:** The product does not sufficiently track and release allocated memory after it has been used, which slowly consumes remaining memory.
+**Link to the fixed code of firts program:** [`program2.c`](https://github.com/zDragonLORD1010/Secure-System-Development-/blob/main/lab3/program2.c)
 
+![image](program2_img/Screenshot%20From%202025-03-17%2015-21-01.pngg)
+
+Verifying the output:
+
+![image](program2_img/Screenshot%20From%202025-03-17%2015-22-31.png)
 
