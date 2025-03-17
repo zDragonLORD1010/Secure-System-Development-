@@ -34,6 +34,7 @@ I analyzed program1 using `valgrind` and got the following output:
 
 ![image](https://github.com/user-attachments/assets/2ab16b53-4a59-4c7c-b7c7-5d4be0f8350d)
 
+### Explanation of `valgrind` output
 
 
 
