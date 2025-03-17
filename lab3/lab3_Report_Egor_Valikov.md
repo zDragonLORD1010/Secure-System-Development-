@@ -30,7 +30,7 @@ First of all, I created `program1.c` file, compiled and tested the program for p
 
 I analyzed program1 using `valgrind` and got the following output:
 
-**Link to the full report:** `valgrind_output1.txt[https://github.com/zDragonLORD1010/Secure-System-Development-/blob/main/lab3/valgrind_output1.txt]`
+**Link to the full report:** [valgrind_output1.txt](https://github.com/zDragonLORD1010/Secure-System-Development-/blob/main/lab3/valgrind_output1.txt)
 
 ![image](https://github.com/user-attachments/assets/2ab16b53-4a59-4c7c-b7c7-5d4be0f8350d)
 
