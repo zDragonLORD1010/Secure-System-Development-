@@ -89,7 +89,7 @@ I found the following vulnerabilities here (The description is taken from the CW
 
 **Link to the fixed code of firts program:** [`program2.c`](https://github.com/zDragonLORD1010/Secure-System-Development-/blob/main/lab3/program2.c)
 
-![image](program2_img/Screenshot%20From%202025-03-17%2015-21-01.pngg)
+![image](program2_img/Screenshot%20From%202025-03-17%2015-21-01.png)
 
 Verifying the output:
 
