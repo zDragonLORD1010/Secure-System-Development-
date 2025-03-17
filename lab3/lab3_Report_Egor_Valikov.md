@@ -46,11 +46,11 @@ I found the following vulnerabilities here (The description is taken from the CW
 **2. CWE-401: Missing Release of Memory after Effective Lifetime**
 
 - **Description:** The product does not sufficiently track and release allocated memory after it has been used, which slowly consumes remaining memory.
-- The allocated memory (malloc(N)) is never freed. So we need to use `free(arr)` at the end of `program1()`.
+- The allocated memory `malloc(N)` is never freed. So we need to use `free(arr)` at the end of `program1()`.
 
-### Program after fix
+### Program 1 after fix
 
-**Link to the fixed code of firts program:** ['program1.c'](https://github.com/zDragonLORD1010/Secure-System-Development-/blob/main/lab3/program1.c)
+**Link to the fixed code of firts program:** [`program1.c`](https://github.com/zDragonLORD1010/Secure-System-Development-/blob/main/lab3/program1.c)
 
 ![image](program1_img/Screenshot%20From%202025-03-17%2015-07-47.png)
 
