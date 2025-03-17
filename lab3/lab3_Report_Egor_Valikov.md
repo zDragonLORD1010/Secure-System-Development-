@@ -83,7 +83,9 @@ I found the following vulnerabilities here (The description is taken from the CW
 **1. CWE-416: Use After Free**
 
 - **Description:** The product reuses or references memory after it has been freed. At some point afterward, the memory may be allocated again and saved in another pointer, while the original pointer references a location somewhere within the new allocation. Any operations using the original pointer are no longer valid because the memory "belongs" to the code that operates on the new pointer.
-- In our case, the `work()` function is free `arr`, but `program2()` is still trying to access it. Therefore, I suggest moving `free(arr)` to the end of the `program2()` function and checking `arr` at the beginning, just in case. Also fixed `memset(arr, 0, sizeof(*arr))` to `memset(arr, 0, N * sizeof(*arr))` (I'm not sure if this refers to a vulnerability like CWE-122, so I just fixed it.).
+- In our case, the `work()` function is free `arr`, but `program2()` is still trying to access it. Therefore, I suggest moving `free(arr)` to the end of the `program2()` function and checking `arr` at the beginning, just in case.
+
+Also fixed `memset(arr, 0, sizeof(*arr))` to `memset(arr, 0, N * sizeof(*arr))` (I'm not sure if this refers to a vulnerability like CWE-122, so I just fixed it.).
 
 ### Program 2 after fix
 
@@ -94,4 +96,33 @@ I found the following vulnerabilities here (The description is taken from the CW
 Verifying the output:
 
 ![image](program2_img/Screenshot%20From%202025-03-17%2015-22-31.png)
+
+## Program 3 analysis
+
+### Program creation and testing
+
+First of all, I created `program3.c` file, compiled and tested the program for performance. I got the desired output.
+
+![image](program3_img/Screenshot%20From%202025-03-17%2015-27-26.png)
+
+![image](program3_img/Screenshot%20From%202025-03-17%2015-28-32.png)
+
+### `valgrind` analysis
+
+I analyzed `program3.c` using `valgrind` and got the following output:
+
+**Link to the full report:** [`valgrind_output3.txt`](https://github.com/zDragonLORD1010/Secure-System-Development-/blob/main/lab3/valgrind_output3.txt)
+
+![image](program3_img/Screenshot%20From%202025-03-17%2015-29-03.png)
+
+### Explanation of `valgrind` output
+
+I found the following vulnerabilities here (The description is taken from the CWE website: [CWE-690](https://cwe.mitre.org/data/definitions/690), ):
+
+**1. CWE-690: Unchecked Return Value to NULL Pointer Dereference**
+
+- **Description:** The product does not check for an error after calling a function that can return with a `NULL` pointer if the function fails, which leads to a resultant `NULL` pointer dereference. 
+
+
+
 
