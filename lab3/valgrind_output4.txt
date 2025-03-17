@@ -1,0 +1,82 @@
+==13626== Memcheck, a memory error detector
+==13626== Copyright (C) 2002-2024, and GNU GPL'd, by Julian Seward et al.
+==13626== Using Valgrind-3.23.0 and LibVEX; rerun with -h for copyright info
+==13626== Command: ./program4
+==13626== 
+==13626== Conditional jump or move depends on uninitialised value(s)
+==13626==    at 0x4851A69: strlen (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==13626==    by 0x48DF61F: __printf_buffer (vfprintf-process-arg.c:435)
+==13626==    by 0x48E0452: __vfprintf_internal (vfprintf-internal.c:1544)
+==13626==    by 0x48D3EF2: printf (printf.c:33)
+==13626==    by 0x10923C: program4 (program4.c:12)
+==13626==    by 0x109251: main (program4.c:16)
+==13626==  Uninitialised value was created by a stack allocation
+==13626==    at 0x109070: ??? (in /home/egor/SSD/lab3/program4)
+==13626== 
+==13626== Conditional jump or move depends on uninitialised value(s)
+==13626==    at 0x4851A78: strlen (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==13626==    by 0x48DF61F: __printf_buffer (vfprintf-process-arg.c:435)
+==13626==    by 0x48E0452: __vfprintf_internal (vfprintf-internal.c:1544)
+==13626==    by 0x48D3EF2: printf (printf.c:33)
+==13626==    by 0x10923C: program4 (program4.c:12)
+==13626==    by 0x109251: main (program4.c:16)
+==13626==  Uninitialised value was created by a stack allocation
+==13626==    at 0x109070: ??? (in /home/egor/SSD/lab3/program4)
+==13626== 
+==13626== Conditional jump or move depends on uninitialised value(s)
+==13626==    at 0x4909189: _IO_file_overflow@@GLIBC_2.2.5 (fileops.c:783)
+==13626==    by 0x490B97F: _IO_default_xsputn (genops.c:426)
+==13626==    by 0x490B97F: _IO_default_xsputn (genops.c:397)
+==13626==    by 0x4909E1A: _IO_new_file_xsputn (fileops.c:1265)
+==13626==    by 0x4909E1A: _IO_file_xsputn@@GLIBC_2.2.5 (fileops.c:1197)
+==13626==    by 0x48D4A18: __printf_buffer_flush_to_file (printf_buffer_to_file.c:59)
+==13626==    by 0x48D4A18: __printf_buffer_to_file_done (printf_buffer_to_file.c:120)
+==13626==    by 0x48E045A: __vfprintf_internal (vfprintf-internal.c:1545)
+==13626==    by 0x48D3EF2: printf (printf.c:33)
+==13626==    by 0x10923C: program4 (program4.c:12)
+==13626==    by 0x109251: main (program4.c:16)
+==13626==  Uninitialised value was created by a stack allocation
+==13626==    at 0x109070: ??? (in /home/egor/SSD/lab3/program4)
+==13626== 
+==13626== Syscall param write(buf) points to uninitialised byte(s)
+==13626==    at 0x4997274: write (write.c:26)
+==13626==    by 0x4909CA4: _IO_file_write@@GLIBC_2.2.5 (fileops.c:1181)
+==13626==    by 0x490886E: new_do_write (fileops.c:449)
+==13626==    by 0x490886E: _IO_do_write@@GLIBC_2.2.5 (fileops.c:426)
+==13626==    by 0x4909222: _IO_file_overflow@@GLIBC_2.2.5 (fileops.c:784)
+==13626==    by 0x490B97F: _IO_default_xsputn (genops.c:426)
+==13626==    by 0x490B97F: _IO_default_xsputn (genops.c:397)
+==13626==    by 0x4909E1A: _IO_new_file_xsputn (fileops.c:1265)
+==13626==    by 0x4909E1A: _IO_file_xsputn@@GLIBC_2.2.5 (fileops.c:1197)
+==13626==    by 0x48D4A18: __printf_buffer_flush_to_file (printf_buffer_to_file.c:59)
+==13626==    by 0x48D4A18: __printf_buffer_to_file_done (printf_buffer_to_file.c:120)
+==13626==    by 0x48E045A: __vfprintf_internal (vfprintf-internal.c:1545)
+==13626==    by 0x48D3EF2: printf (printf.c:33)
+==13626==    by 0x10923C: program4 (program4.c:12)
+==13626==    by 0x109251: main (program4.c:16)
+==13626==  Address 0x4a94048 is 8 bytes inside a block of size 1,024 alloc'd
+==13626==    at 0x4848858: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==13626==    by 0x48FB3D6: _IO_file_doallocate (filedoalloc.c:101)
+==13626==    by 0x490B833: _IO_doallocbuf (genops.c:374)
+==13626==    by 0x49092BF: _IO_file_overflow@@GLIBC_2.2.5 (fileops.c:745)
+==13626==    by 0x4909DDF: _IO_new_file_xsputn (fileops.c:1244)
+==13626==    by 0x4909DDF: _IO_file_xsputn@@GLIBC_2.2.5 (fileops.c:1197)
+==13626==    by 0x48D4A18: __printf_buffer_flush_to_file (printf_buffer_to_file.c:59)
+==13626==    by 0x48D4A18: __printf_buffer_to_file_done (printf_buffer_to_file.c:120)
+==13626==    by 0x48E045A: __vfprintf_internal (vfprintf-internal.c:1545)
+==13626==    by 0x48D3EF2: printf (printf.c:33)
+==13626==    by 0x10923C: program4 (program4.c:12)
+==13626==    by 0x109251: main (program4.c:16)
+==13626==  Uninitialised value was created by a stack allocation
+==13626==    at 0x109070: ??? (in /home/egor/SSD/lab3/program4)
+==13626== 
+String: Hello World!
+==13626== 
+==13626== HEAP SUMMARY:
+==13626==     in use at exit: 0 bytes in 0 blocks
+==13626==   total heap usage: 1 allocs, 1 frees, 1,024 bytes allocated
+==13626== 
+==13626== All heap blocks were freed -- no leaks are possible
+==13626== 
+==13626== For lists of detected and suppressed errors, rerun with: -s
+==13626== ERROR SUMMARY: 26 errors from 4 contexts (suppressed: 0 from 0)

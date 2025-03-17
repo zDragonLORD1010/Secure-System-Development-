@@ -1,0 +1,110 @@
+==16454== Memcheck, a memory error detector
+==16454== Copyright (C) 2002-2024, and GNU GPL'd, by Julian Seward et al.
+==16454== Using Valgrind-3.23.0 and LibVEX; rerun with -h for copyright info
+==16454== Command: ./hash
+==16454== 
+HashInit() Successful
+HashAdd(map, 'test_key')
+HashAdd(map, 'other_key')
+HashFind(map, test_key) = {'test_key': 1}
+HashDump(map) = 
+other_key
+test_key
+HashDelete(map, 'test_key')
+==16454== Invalid read of size 1
+==16454==    at 0x4851A66: strlen (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==16454==    by 0x48DF61F: __printf_buffer (vfprintf-process-arg.c:435)
+==16454==    by 0x48E0452: __vfprintf_internal (vfprintf-internal.c:1544)
+==16454==    by 0x48D3EF2: printf (printf.c:33)
+==16454==    by 0x109673: main (hash.c:114)
+==16454==  Address 0x4a948c0 is 0 bytes inside a block of size 272 free'd
+==16454==    at 0x484B8BF: free (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==16454==    by 0x1093F2: HashDelete (hash.c:54)
+==16454==    by 0x109658: main (hash.c:112)
+==16454==  Block was alloc'd at
+==16454==    at 0x4848858: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==16454==    by 0x1094CC: main (hash.c:81)
+==16454== 
+==16454== Invalid read of size 1
+==16454==    at 0x4851A74: strlen (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==16454==    by 0x48DF61F: __printf_buffer (vfprintf-process-arg.c:435)
+==16454==    by 0x48E0452: __vfprintf_internal (vfprintf-internal.c:1544)
+==16454==    by 0x48D3EF2: printf (printf.c:33)
+==16454==    by 0x109673: main (hash.c:114)
+==16454==  Address 0x4a948c1 is 1 bytes inside a block of size 272 free'd
+==16454==    at 0x484B8BF: free (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==16454==    by 0x1093F2: HashDelete (hash.c:54)
+==16454==    by 0x109658: main (hash.c:112)
+==16454==  Block was alloc'd at
+==16454==    at 0x4848858: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==16454==    by 0x1094CC: main (hash.c:81)
+==16454== 
+==16454== Invalid read of size 2
+==16454==    at 0x48563C0: memmove (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==16454==    by 0x48D4AD7: memcpy (string_fortified.h:29)
+==16454==    by 0x48D4AD7: __printf_buffer_write (Xprintf_buffer_write.c:39)
+==16454==    by 0x48DDCB2: __printf_buffer (vfprintf-process-arg.c:501)
+==16454==    by 0x48E0452: __vfprintf_internal (vfprintf-internal.c:1544)
+==16454==    by 0x48D3EF2: printf (printf.c:33)
+==16454==    by 0x109673: main (hash.c:114)
+==16454==  Address 0x4a948c0 is 0 bytes inside a block of size 272 free'd
+==16454==    at 0x484B8BF: free (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==16454==    by 0x1093F2: HashDelete (hash.c:54)
+==16454==    by 0x109658: main (hash.c:112)
+==16454==  Block was alloc'd at
+==16454==    at 0x4848858: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==16454==    by 0x1094CC: main (hash.c:81)
+==16454== 
+==16454== Invalid read of size 2
+==16454==    at 0x48563CF: memmove (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==16454==    by 0x48D4AD7: memcpy (string_fortified.h:29)
+==16454==    by 0x48D4AD7: __printf_buffer_write (Xprintf_buffer_write.c:39)
+==16454==    by 0x48DDCB2: __printf_buffer (vfprintf-process-arg.c:501)
+==16454==    by 0x48E0452: __vfprintf_internal (vfprintf-internal.c:1544)
+==16454==    by 0x48D3EF2: printf (printf.c:33)
+==16454==    by 0x109673: main (hash.c:114)
+==16454==  Address 0x4a948c4 is 4 bytes inside a block of size 272 free'd
+==16454==    at 0x484B8BF: free (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==16454==    by 0x1093F2: HashDelete (hash.c:54)
+==16454==    by 0x109658: main (hash.c:112)
+==16454==  Block was alloc'd at
+==16454==    at 0x4848858: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==16454==    by 0x1094CC: main (hash.c:81)
+==16454== 
+==16454== Invalid read of size 1
+==16454==    at 0x10921C: HashIndex (hash.c:10)
+==16454==    by 0x1092FA: HashFind (hash.c:34)
+==16454==    by 0x109686: main (hash.c:115)
+==16454==  Address 0x4a948c0 is 0 bytes inside a block of size 272 free'd
+==16454==    at 0x484B8BF: free (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==16454==    by 0x1093F2: HashDelete (hash.c:54)
+==16454==    by 0x109658: main (hash.c:112)
+==16454==  Block was alloc'd at
+==16454==    at 0x4848858: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==16454==    by 0x1094CC: main (hash.c:81)
+==16454== 
+==16454== Invalid read of size 1
+==16454==    at 0x10920A: HashIndex (hash.c:11)
+==16454==    by 0x1092FA: HashFind (hash.c:34)
+==16454==    by 0x109686: main (hash.c:115)
+==16454==  Address 0x4a948c0 is 0 bytes inside a block of size 272 free'd
+==16454==    at 0x484B8BF: free (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==16454==    by 0x1093F2: HashDelete (hash.c:54)
+==16454==    by 0x109658: main (hash.c:112)
+==16454==  Block was alloc'd at
+==16454==    at 0x4848858: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==16454==    by 0x1094CC: main (hash.c:81)
+==16454== 
+HashFind(map, test_key) = Not found
+HashDump(map) = 
+other_key
+==16454== 
+==16454== HEAP SUMMARY:
+==16454==     in use at exit: 0 bytes in 0 blocks
+==16454==   total heap usage: 4 allocs, 4 frees, 2,592 bytes allocated
+==16454== 
+==16454== All heap blocks were freed -- no leaks are possible
+==16454== 
+==16454== For lists of detected and suppressed errors, rerun with: -s
+==16454== ERROR SUMMARY: 30 errors from 6 contexts (suppressed: 0 from 0)
+
