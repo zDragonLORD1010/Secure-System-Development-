@@ -14,7 +14,7 @@
 
 I installed needed tools (`gcc` and `valgrind`) without any problems:
 
-![image](https://github.com/user-attachments/assets/3fee191d-3da4-4901-ad86-fd4435f26bd0)
+![image](program1_img/Screenshot%20From%202025-03-17%2014-57-15.png)
 
 ## Program 1 analysis
 
@@ -22,9 +22,9 @@ I installed needed tools (`gcc` and `valgrind`) without any problems:
 
 First of all, I created `program1.c` file, compiled and tested the program for performance. I got the desired output.
 
-![image](https://github.com/user-attachments/assets/5ee00c7b-2756-42f7-b2a1-2b771e9740f9)
+![image](program1_img/Screenshot%20From%202025-03-17%2015-01-27.png)
 
-![image](https://github.com/user-attachments/assets/aa4da153-cd89-4c12-8704-52af373840ea)
+![image](program1_img/Screenshot%20From%202025-03-17%2014-59-02.png)
 
 ### `valgrind` analysis
 
@@ -32,7 +32,7 @@ I analyzed program1 using `valgrind` and got the following output:
 
 **Link to the full report:** [`valgrind_output1.txt`](https://github.com/zDragonLORD1010/Secure-System-Development-/blob/main/lab3/valgrind_output1.txt)
 
-![image](https://github.com/user-attachments/assets/2ab16b53-4a59-4c7c-b7c7-5d4be0f8350d)
+![image](program1_img/Screenshot%20From%202025-03-17%2015-00-00.png)
 
 ### Explanation of `valgrind` output
 
@@ -56,7 +56,7 @@ I found the following vulnerabilities here (The description is taken from the CW
 
 Verifying the output:
 
-![image](https://github.com/user-attachments/assets/6a94e647-f861-481f-addf-9f0dc50f4c2a)
+![image](program1_img/Screenshot%20From%202025-03-17%2015-04-38.png)
 
 
 
