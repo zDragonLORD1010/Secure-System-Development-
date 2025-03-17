@@ -136,3 +136,21 @@ Verifying the output:
 
 ![image](program3_img/Screenshot%20From%202025-03-17%2015-32-44.png)
 
+## Program 4 analysis
+
+### Program creation and testing
+
+First of all, I created `program4.c` file, compiled and tested the program for performance. I got the desired output.
+
+![image](program4_img/Screenshot%20From%202025-03-17%2015-37-18.png)
+
+![image](program4_img/Screenshot%20From%202025-03-17%2015-38-05.png)
+
+### `valgrind` analysis
+
+I analyzed `program4.c` using `valgrind` and got the following output:
+
+**Link to the full report:** [`valgrind_output4.txt`](https://github.com/zDragonLORD1010/Secure-System-Development-/blob/main/lab3/valgrind_output4.txt)
+
+![image](program4_img/Screenshot%20From%202025-03-17%2015-38-23.png)
+
