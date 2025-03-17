@@ -95,7 +95,7 @@ Also fixed `memset(arr, 0, sizeof(*arr))` to `memset(arr, 0, N * sizeof(*arr))` 
 
 Verifying the output:
 
-![image](program2_img/Screenshot%20From%202025-03-17%2015-22-31.png)
+![image](program2_img/Screenshot%20From%202025-03-17%2015-19-34.png)
 
 ## Program 3 analysis
 
