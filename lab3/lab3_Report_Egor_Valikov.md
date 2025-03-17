@@ -52,7 +52,7 @@ I found the following vulnerabilities here (The description is taken from the CW
 
 **Link to the fixed code of firts program:** ['program1.c'](https://github.com/zDragonLORD1010/Secure-System-Development-/blob/main/lab3/program1.c)
 
-![image](lab3/program1_img/Screenshot%20From%202025-03-17%2015-07-47.png)
+![image](program1_img/Screenshot%20From%202025-03-17%2015-07-47.png)
 
 Verifying the output:
 
