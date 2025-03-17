@@ -28,7 +28,7 @@ First of all, I created `program1.c` file, compiled and tested the program for p
 
 ### `valgrind` analysis
 
-I analyzed program1 using `valgrind` and got the following output:
+I analyzed `program1.c` using `valgrind` and got the following output:
 
 **Link to the full report:** [`valgrind_output1.txt`](https://github.com/zDragonLORD1010/Secure-System-Development-/blob/main/lab3/valgrind_output1.txt)
 
@@ -58,5 +58,38 @@ Verifying the output:
 
 ![image](program1_img/Screenshot%20From%202025-03-17%2015-04-38.png)
 
+## Program 2 analysis
+
+### Program creation and testing
+
+First of all, I created `program2.c` file, compiled and tested the program for performance. I got the desired output.
+
+![image](program2_img/Screenshot%20From%202025-03-17%2015-14-09.png)
+
+![image](program2_img/Screenshot%20From%202025-03-17%2015-15-18.png)
+
+### `valgrind` analysis
+
+I analyzed `program2.c` using `valgrind` and got the following output:
+
+**Link to the full report:** [`valgrind_output2.txt`](https://github.com/zDragonLORD1010/Secure-System-Development-/blob/main/lab3/valgrind_output2.txt)
+
+![image](program2_img/Screenshot%20From%202025-03-17%2015-22-31.png)
+
+### Explanation of `valgrind` output
+
+I found the following vulnerabilities here (The description is taken from the CWE website: [CWE-908]([https://cwe.mitre.org/data/definitions/122](https://cwe.mitre.org/data/definitions/908), [CWE-416](https://cwe.mitre.org/data/definitions/416.html), [CWE-401](https://cwe.mitre.org/data/definitions/401)):
+
+**1. CWE-908: Use of Uninitialized Resource**
+
+- **Description:** The product uses or accesses a resource that has not been initialized.
+
+**2. CWE-416: Use After Free**
+
+- **Description:** The product reuses or references memory after it has been freed. At some point afterward, the memory may be allocated again and saved in another pointer, while the original pointer references a location somewhere within the new allocation. Any operations using the original pointer are no longer valid because the memory "belongs" to the code that operates on the new pointer.
+
+**3. CWE-401: Missing Release of Memory after Effective Lifetime**
+
+- **Description:** The product does not sufficiently track and release allocated memory after it has been used, which slowly consumes remaining memory.
 
 
