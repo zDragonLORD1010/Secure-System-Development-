@@ -36,7 +36,7 @@ I analyzed program1 using `valgrind` and got the following output:
 
 ### Explanation of `valgrind` output
 
-I found the following vulnerabilities here (The description is taken from the CWE website: [CWE-122](https://cwe.mitre.org/data/definitions/122.html), [CWE-401](https://cwe.mitre.org/data/definitions/401.html)):
+I found the following vulnerabilities here (The description is taken from the CWE website: [CWE-122](https://cwe.mitre.org/data/definitions/122), [CWE-401](https://cwe.mitre.org/data/definitions/401)):
 
 **1. CWE-122: Heap-based Buffer Overflow**
 
