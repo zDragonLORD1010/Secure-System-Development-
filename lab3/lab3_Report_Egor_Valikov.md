@@ -117,12 +117,22 @@ I analyzed `program3.c` using `valgrind` and got the following output:
 
 ### Explanation of `valgrind` output
 
-I found the following vulnerabilities here (The description is taken from the CWE website: [CWE-690](https://cwe.mitre.org/data/definitions/690), ):
+I found the following vulnerabilities here (The description is taken from the CWE website: [CWE-690](https://cwe.mitre.org/data/definitions/690)):
 
 **1. CWE-690: Unchecked Return Value to NULL Pointer Dereference**
 
-- **Description:** The product does not check for an error after calling a function that can return with a `NULL` pointer if the function fails, which leads to a resultant `NULL` pointer dereference. 
+- **Description:** The product does not check for an error after calling a function that can return with a `NULL` pointer if the function fails, which leads to a resultant `NULL` pointer dereference.
+- In our case, we need to add a check at the end, because we can get `arr = NULL`.
 
+I also fixed a typo in the `if` condition (`arr = NULL` to `arr == NULL`) and remove `string.h` because I think we don't need this library (to make the code simpler, especially since it did not affect its performance.).
 
+### Program 3 after fix
 
+**Link to the fixed code of firts program:** [`program3.c`](https://github.com/zDragonLORD1010/Secure-System-Development-/blob/main/lab3/program3.c)
+
+![image](program3_img/photo_2025-03-17_19-09-58.jpg)
+
+Verifying the output:
+
+![image](program3_img/Screenshot%20From%202025-03-17%2015-32-44.png)
 
