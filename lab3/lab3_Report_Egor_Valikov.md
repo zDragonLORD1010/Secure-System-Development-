@@ -237,12 +237,26 @@ I commented out one `printf("HashAdd(map, '%s')\n", pv1->KeyName)` and one `Hash
 
 I analyzed `hash.c` using `valgrind` and got the following output:
 
-**Link to the full report:** [`valgrind_output_hash_fix.txt`](https://github.com/zDragonLORD1010/Secure-System-Development-/blob/main/lab3/valgrind_output_hash_fix.txt)
+**Link to the full report:** [`valgrind_output_hash_fix1.txt`](https://github.com/zDragonLORD1010/Secure-System-Development-/blob/main/lab3/valgrind_output_hash_fix1.txt)
 
 ![image](hash_img/Screenshot%20From%202025-03-17%2016-10-32.png)
 
+![image](hash_img/Screenshot%20From%202025-03-17%2016-22-33.png)
 
+### Final fixes for `hash.c`
 
+According to the analysis, the program worked, but it still had some flaws, so I reviewed the hash.c code again and fixed the `HashDelete()` function. I added line `val = NULL` to it, and line `pv1 = NULL` to the `main()` function.
 
+![image](hash_img/Screenshot%20From%202025-03-17%2016-26-58.png)
+
+### hash.c after fixes
+
+**Link to the fixed code of firts program:** [`hash.c`](https://github.com/zDragonLORD1010/Secure-System-Development-/blob/main/lab3/hash.c)
+
+Verifying the output:
+
+![image](hash_img/Screenshot%20From%202025-03-17%2016-28-32.png)
+
+## Used resources
 
 
