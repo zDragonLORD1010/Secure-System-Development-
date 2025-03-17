@@ -154,3 +154,21 @@ I analyzed `program4.c` using `valgrind` and got the following output:
 
 ![image](program4_img/Screenshot%20From%202025-03-17%2015-38-23.png)
 
+### Explanation of `valgrind` output
+
+I found the following vulnerabilities here (The description is taken from the CWE website: [CWE-562](https://cwe.mitre.org/data/definitions/562)):
+
+**1. CWE-562: Return of Stack Variable Address**
+
+- **Description:** A function returns the address of a stack variable, which will cause unintended program behavior, typically in the form of a crash.
+- The message variable is declared as a local array inside the `getString()` function, which means that it is released (becomes invalid) after the `getString()` function returns. Therefore, to fix this, I first allocate memory on heap (`ret = malloc(100 * sizeof(char))`), then copy string (`strcpy(ret, "Hello World!")`), and then return `ret`. In the end, I have free allocated memory (`free(str)`).
+
+### Program 4 after fix
+
+**Link to the fixed code of firts program:** [`program4.c`](https://github.com/zDragonLORD1010/Secure-System-Development-/blob/main/lab3/program4.c)
+
+![image](program4_img/Screenshot%20From%202025-03-17%2015-42-04.png)
+
+Verifying the output:
+
+![image](program4_img/Screenshot%20From%202025-03-17%2015-41-46.png)
