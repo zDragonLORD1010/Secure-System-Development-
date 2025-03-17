@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 void* program3(unsigned N) {
-    void *arr = malloc(N * sizeof(char));
+    void *arr = malloc(N * sizeof(*arr));
     if ((N < 1) || (arr == NULL)) {
         printf("Memory allocation failed!\n");
         return NULL;
