@@ -259,4 +259,25 @@ Verifying the output:
 
 ## Used resources
 
+### 1. Fixed programs:
+
+- [`program1.c`](https://github.com/zDragonLORD1010/Secure-System-Development-/blob/main/lab3/program1.c)
+- [`program2.c`](https://github.com/zDragonLORD1010/Secure-System-Development-/blob/main/lab3/program2.c)
+- [`program3.c`](https://github.com/zDragonLORD1010/Secure-System-Development-/blob/main/lab3/program3.c)
+- [`program4.c`](https://github.com/zDragonLORD1010/Secure-System-Development-/blob/main/lab3/program4.c)
+- [`hash.c`](https://github.com/zDragonLORD1010/Secure-System-Development-/blob/main/lab3/hash.c)
+
+### 2. `valgrind` output for all programs:
+
+- [`valgrind_output1.txt`](https://github.com/zDragonLORD1010/Secure-System-Development-/blob/main/lab3/valgrind_output1.txt)
+- [`valgrind_output2.txt`](https://github.com/zDragonLORD1010/Secure-System-Development-/blob/main/lab3/valgrind_output2.txt)
+- [`valgrind_output3.txt`](https://github.com/zDragonLORD1010/Secure-System-Development-/blob/main/lab3/valgrind_output3.txt)
+- [`valgrind_output4.txt`](https://github.com/zDragonLORD1010/Secure-System-Development-/blob/main/lab3/valgrind_output4.txt)
+- [`valgrind_output_hash.txt`](https://github.com/zDragonLORD1010/Secure-System-Development-/blob/main/lab3/valgrind_output_hash.txt)
+- [`valgrind_output_hash_fix1.txt`](https://github.com/zDragonLORD1010/Secure-System-Development-/blob/main/lab3/valgrind_output_hash_fix1.txt)
+
+### 3. All screenshots and remaining data
+
+- **Link:** https://github.com/zDragonLORD1010/Secure-System-Development-/tree/main/lab3
+- Screenshots in `*_img` folders
 
