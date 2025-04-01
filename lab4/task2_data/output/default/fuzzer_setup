@@ -1,0 +1,12 @@
+# environment variables:
+AFL_CUSTOM_INFO_PROGRAM=/usr/bin/python3
+AFL_CUSTOM_INFO_PROGRAM_ARGV=/src/main.py
+AFL_CUSTOM_INFO_OUT=/src/output/default
+AFL_DUMB_FORKSRV=1
+AFL_I_DONT_CARE_ABOUT_MISSING_CRASHES=1
+AFL_TRY_AFFINITY=1
+AFL_NO_FORKSRV=1
+AFL_SKIP_BIN_CHECK=1
+AFL_SKIP_CPUFREQ=1
+# command line:
+'afl-fuzz' '-i' '/src/input' '-o' '/src/output' '-t' '2000' '--' '/usr/bin/python3' '/src/main.py'
