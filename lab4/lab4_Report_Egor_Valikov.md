@@ -48,7 +48,7 @@ Second (modofied) command:
 ffuf -u http://localhost:80/FUZZ -w SecLists/Discovery/Web-Content/big.txt -fc 404
 ```
 
-#### The purpose of the command.
+#### The purpose of the command:
 
 1. Employs `ffuf` for fuzzing the DVWA web application hosted locally.
 
@@ -66,16 +66,33 @@ Running these commands to get reports.
 
 ![image](https://github.com/user-attachments/assets/6214f7ec-813c-4886-a825-28c1c5583649)
 
-Full output of commands 1 and 2, respectively:
+Full outputs of the first and second commands, respectively:
 
-- [`big_output.txt`](https://github.com/zDragonLORD1010/Secure-System-Development-/blob/main/lab4/task1_output/big_output.txt)
+- The output of the first command without a `-fc` flag: [`big_output.txt`](https://github.com/zDragonLORD1010/Secure-System-Development-/blob/main/lab4/task1_output/big_output.txt)
 
-- [`big_output_filter.txt`](https://github.com/zDragonLORD1010/Secure-System-Development-/blob/main/lab4/task1_output/big_output_filter.txt)
+- The output of the second command with a `-fc` flag: [`big_output_filter.txt`](https://github.com/zDragonLORD1010/Secure-System-Development-/blob/main/lab4/task1_output/big_output_filter.txt)
 
-#### 
+#### Output analysis
 
+After analyzing the outputs of the first and second commands, I realized that the `-fc` flag did not affect anything in this case. The difference in the reports was only in the line using the filter (` :: Filter           : Response status: 404`).
 
+Accessible files (Endpoints that returned HTTP status 200):
 
+- The `favicon.ico` file
+
+- The `robots.txt` file
+
+Interesting error codes (Endpoints that returned HTTP status 403 or 301):
+
+- The endpoints exist, but are redirected to another location (status 301):
+  - /config
+  - /docs
+  - /external
+
+- The endpoints exist, but their number is limited (status 403 or **Forbidden**):
+  - `/.htaccess`
+  - `/.htpasswd`
+  - `/server-status`
 
 ### What file extensions from `web-extensions.txt` are available for the index page?
 
