@@ -16,13 +16,13 @@
 
 Initially, I successfully installed `ffuf` and `secLists`. There were no difficulties with this.
 
-![image](https://github.com/user-attachments/assets/474b559c-4589-4f25-9f92-dde7420ca26a)
+![image](https://github.com/zDragonLORD1010/Secure-System-Development-/blob/main/lab4/task1_img/install.png)
 
 My next step was to run Run DVWA locally with docker on `127.0.0.1:80:80` (localhost), but there were some problems because this port was already busy. I disabled the previous programs running on this port and successfully launched DVWA.
 
-![image](https://github.com/user-attachments/assets/6d72d036-ef09-4125-bead-7c8d18da5f2c)
+![image](https://github.com/zDragonLORD1010/Secure-System-Development-/blob/main/lab4/task1_img/docker.png)
 
-![image](https://github.com/user-attachments/assets/a84eae6d-f116-45d9-a5df-c08b0cbe98b3)
+![image](https://github.com/zDragonLORD1010/Secure-System-Development-/blob/main/lab4/task1_img/docker_fix.png)
 
 ## Fuzz for endpoints using the appropriate wordlists and flags from `secLists`
 
@@ -42,7 +42,7 @@ First command:
 ffuf -u http://localhost:80/FUZZ -w SecLists/Discovery/Web-Content/big.txt
 ```
 
-Second (modofied) command:
+Second (modified) command:
 
 ```bash
 ffuf -u http://localhost:80/FUZZ -w SecLists/Discovery/Web-Content/big.txt -fc 404
@@ -62,9 +62,9 @@ ffuf -u http://localhost:80/FUZZ -w SecLists/Discovery/Web-Content/big.txt -fc 4
 
 Running these commands to get reports.
 
-![image](https://github.com/user-attachments/assets/14258134-f480-4db0-9c62-5da561821f57)
+![image](https://github.com/zDragonLORD1010/Secure-System-Development-/blob/main/lab4/task1_img/big.png)
 
-![image](https://github.com/user-attachments/assets/6214f7ec-813c-4886-a825-28c1c5583649)
+![image](https://github.com/zDragonLORD1010/Secure-System-Development-/blob/main/lab4/task1_img/big_fiter.png)
 
 Full outputs of the first and second commands, respectively:
 
@@ -85,19 +85,50 @@ After analyzing the outputs of the first and second commands, I realized that th
 #### Interesting error codes (Endpoints that returned HTTP status 403 or 301):
 
 - The endpoints exist, but are redirected to another location (status 301):
-  - `/config`
-  - `/docs`
-  - `/external`
+  - `config`
+  - `docs`
+  - `external`
 
 - The endpoints exist, but their number is limited (status 403 or **Forbidden**):
-  - `/.htaccess`
-  - `/.htpasswd`
-  - `/server-status`
+  - `.htaccess`
+  - `.htpasswd`
+  - `server-status`
 
 ### What file extensions from `web-extensions.txt` are available for the index page?
 
+I used this command to answer this question.
 
+Command:
 
+```bash
+ffuf -u http://localhost:80/index.FUZZ -w /snap/seclists/current/Discovery/Web-Content/web-extensions.txt
+```
+
+#### The purpose of the command:
+
+1. Employs `ffuf` for fuzzing the DVWA web application hosted locally.
+
+2. Tests different file extensions for the index page by appending each extension from the wordlist to "index"
+
+3. Displays which extensions produce successful responses.
+
+#### Executing command
+
+Running this command to get report.
+
+![image](https://github.com/zDragonLORD1010/Secure-System-Development-/blob/main/lab4/task1_img/web.png)
+
+Full output of the command:
+
+- The output of the command: [`web_output.txt`](https://github.com/zDragonLORD1010/Secure-System-Development-/blob/main/lab4/task1_output/web_output.txt)
+
+#### Output analysis
+
+#### Available extensions:
+
+- The `index.php` (status 302)
+
+- The `index.phps` (status 403 or **Forbidden**)
 
 ### Which directories from `raft-medium-directories.txt` are accessible? Which ones gave interesting error codes (not 404).
 
