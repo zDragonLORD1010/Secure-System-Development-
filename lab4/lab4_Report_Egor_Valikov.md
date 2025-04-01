@@ -290,10 +290,60 @@ elif s[i] == '+':
     i += 1
 ```
 
-### Answers to questions
+### Answer the questions
 
 #### Will the fuzzer ever terminate in the above experiment? Why/Why not?
 
+I think not. After working with AFL, I realized that it runs until it is manually stopped. It is designed to continuously develop new test cases to find deeper flaws and it stops only if it cannot discover new ways to cover for a long period.
+
 #### How coverage-guided fuzzers work? Is AFL coverage-guided?
 
+Yes, AFL is coverage-guided. It puts tags in the code, prefers tests that follow new paths, remembers where it has already been, copies and modifies the best tests.
+
 #### How to optimize a fuzzing campaign?
+
+While working with fuzzer, I have identified the following practices for myself:
+
+1. Good examples: I advise you to start with the correct input data.
+
+2. Accuracy: I suggest running multiple fuzzer instances with different flags for a more detailed study.
+
+3. Performance: I recommend using -t to set timeouts, -m to limit the amount of memory.
+
+4. Cleaning: I recommend you to remove unnecessary tests (afl-cmin) to avoid inaccuracies or overloading memory and processor.
+
+5. Monitor: I suggest monitor `fuzzer_stats` to adjust parameters
+
+## Used resources
+
+#### Screenshots of the first task: [link](https://github.com/zDragonLORD1010/Secure-System-Development-/tree/main/lab4/task1_img)
+
+#### First task reports
+
+- The folder of reports of the first task: [link](https://github.com/zDragonLORD1010/Secure-System-Development-/tree/main/lab4/task1_output)
+
+- Outputs for `big.txt`:
+  - The output of the command without a `-fc` flag: [`big_output.txt`](https://github.com/zDragonLORD1010/Secure-System-Development-/blob/main/lab4/task1_output/big_output.txt)
+  - The output of the command with a `-fc` flag: [`big_output_filter.txt`](https://github.com/zDragonLORD1010/Secure-System-Development-/blob/main/lab4/task1_output/big_output_filter.txt)
+
+- Outputs for `web-extensions.txt`:
+  - The output of the command: [`web_output.txt`](https://github.com/zDragonLORD1010/Secure-System-Development-/blob/main/lab4/task1_output/web_output.txt)
+
+- Outputs for `raft-medium-directories.txt`:
+  - The output of the command without a `-fc` flag: [`raft_output.txt`](https://github.com/zDragonLORD1010/Secure-System-Development-/blob/main/lab4/task1_output/raft_output.txt)
+  - The output of the command with a `-fc` flag: [`raft_output_filter.txt`](https://github.com/zDragonLORD1010/Secure-System-Development-/blob/main/lab4/task1_output/raft_output_filter.txt)
+
+#### Screenshots of the second task: [link](https://github.com/zDragonLORD1010/Secure-System-Development-/tree/main/lab4/task2_img)
+
+#### Second task `input` folder: [link](https://github.com/zDragonLORD1010/Secure-System-Development-/tree/main/lab4/task2_data/input)
+
+#### Second task `output` folder: [link](https://github.com/zDragonLORD1010/Secure-System-Development-/tree/main/lab4/task2_data/output/default)
+
+- [`fuzzer_stats`](https://github.com/zDragonLORD1010/Secure-System-Development-/blob/main/lab4/task2_data/output/default/fuzzer_stats)
+
+- [`crashes`](https://github.com/zDragonLORD1010/Secure-System-Development-/tree/main/lab4/task2_data/output/default/crashes)
+
+- [`hangs`](https://github.com/zDragonLORD1010/Secure-System-Development-/tree/main/lab4/task2_data/output/default/hangs)
+
+
+
