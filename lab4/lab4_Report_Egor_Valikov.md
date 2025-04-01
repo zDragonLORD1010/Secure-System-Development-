@@ -76,18 +76,18 @@ Full outputs of the first and second commands, respectively:
 
 After analyzing the outputs of the first and second commands, I realized that the `-fc` flag did not affect anything in this case. The difference in the reports was only in the line using the filter (` :: Filter           : Response status: 404`).
 
-Accessible files (Endpoints that returned HTTP status 200):
+#### Accessible files (Endpoints that returned HTTP status 200):
 
 - The `favicon.ico` file
 
 - The `robots.txt` file
 
-Interesting error codes (Endpoints that returned HTTP status 403 or 301):
+#### Interesting error codes (Endpoints that returned HTTP status 403 or 301):
 
 - The endpoints exist, but are redirected to another location (status 301):
-  - /config
-  - /docs
-  - /external
+  - `/config`
+  - `/docs`
+  - `/external`
 
 - The endpoints exist, but their number is limited (status 403 or **Forbidden**):
   - `/.htaccess`
