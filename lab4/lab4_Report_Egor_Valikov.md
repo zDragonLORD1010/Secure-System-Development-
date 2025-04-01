@@ -108,7 +108,7 @@ ffuf -u http://localhost:80/index.FUZZ -w /snap/seclists/current/Discovery/Web-C
 
 1. Employs `ffuf` for fuzzing the DVWA web application hosted locally.
 
-2. Tests different file extensions for the index page by appending each extension from the wordlist to "index"
+2. Tests different file extensions for the index page by appending each extension from the `web-extensions.txt` list to "index".
 
 3. Displays which extensions produce successful responses.
 
@@ -132,7 +132,61 @@ Full output of the command:
 
 ### Which directories from `raft-medium-directories.txt` are accessible? Which ones gave interesting error codes (not 404).
 
+I used these commands to answer this question. They have the same purpose, the only difference is the additional flag `-fc 404`that adds the 404 error filter.
 
+First command:
+
+```bash
+ffuf -u http://localhost:80/FUZZ -w /snap/seclists/current/Discovery/Web-Content/raft-medium-directories.txt
+```
+
+Second (modified) command:
+
+```bash
+ffuf -u http://localhost:80/FUZZ -w /snap/seclists/current/Discovery/Web-Content/raft-medium-directories.txt -fc 404
+```
+
+#### The purpose of the command:
+
+1. Employs `ffuf` for fuzzing the DVWA web application hosted locally.
+
+2. Tests directory names from the `raft-medium-directories.txt` list to identify accessible directories or those with interesting responses.
+
+3. Excludes (`-fc`) any responses that return a 404 status code.
+
+4. Displays only endpoints that can be reached or those that return noteworthy error codes.
+
+#### Executing commands
+
+Running these commands to get reports.
+
+![image](https://github.com/zDragonLORD1010/Secure-System-Development-/blob/main/lab4/task1_img/raft.png)
+
+![image](https://github.com/zDragonLORD1010/Secure-System-Development-/blob/main/lab4/task1_img/raft_filter.png)
+
+Full outputs of the first and second commands, respectively:
+
+- The output of the first command without a `-fc` flag: [`raft_output.txt`](https://github.com/zDragonLORD1010/Secure-System-Development-/blob/main/lab4/task1_output/raft_output.txt)
+
+- The output of the second command with a `-fc` flag: [`raft_output_filter.txt`](https://github.com/zDragonLORD1010/Secure-System-Development-/blob/main/lab4/task1_output/raft_output_filter.txt)
+
+#### Output analysis
+
+After analyzing the outputs of the first and second commands, I realized that the `-fc` flag did not affect anything in this case. The difference in the reports was only in the line using the filter (` :: Filter           : Response status: 404`).
+
+#### Accessible directories:
+
+- `config` (status 301)
+
+- `docs` (statu 301)
+
+- `external` (statu 301)
+
+#### Interesting error codes:
+
+- `server-status` (ststus 403)
+
+- Unknown `er` (ststus 302)
 
 
 
