@@ -188,5 +188,112 @@ After analyzing the outputs of the first and second commands, I realized that th
 
 - Unknown `er` (ststus 302)
 
+## Task 2 - Python Fuzzing
+
+### Install AFL++ (`python-afl`) locally and setup docker
+
+I had some problems configuring docker. Docker was running properly, but the `input` and `output` folders weren't working properly, so I modified the command a bit to make everything work correctly.
+
+![image](https://github.com/zDragonLORD1010/Secure-System-Development-/blob/main/lab4/task2_img/install.png)
+
+### Prepare `input` and `output` directory with appropriate test input
+
+As I described earlier, due to some problems, I decided to create folders in `/src/` on my computer. I also created some simple tests:
+
+- Simple %-encoding ("A")
+  
+- Space encoding
+
+- No encoding
+
+![image](https://github.com/zDragonLORD1010/Secure-System-Development-/blob/main/lab4/task2_img/input.png)
+
+The entire contents of the `input` folder can be viewed at this link: [`input`](https://github.com/zDragonLORD1010/Secure-System-Development-/tree/main/lab4/task2_data/input)
+
+### Run the fuzzer
+
+After these steps, I launched the fuzzer using the command:
+
+```bash
+py-afl-fuzz -i /src/input -o /src/output -- /usr/bin/python3 /src/main.py
+```
+
+However, I got an error. I don't fully understand why it occurred, but after adding a timeout to the command, everything worked:
+
+```bash
+py-afl-fuzz -i /src/input -o /src/output -t 2000 -- /usr/bin/python3 /src/main.py
+```
+
+![image](https://github.com/zDragonLORD1010/Secure-System-Development-/blob/main/lab4/task2_img/error_timeout.png)
 
 
+### Wait for a while, expect at least one detected crash and one detected hang
+
+I didn't wait very long. Due to the fact that I located the `input` and `output` folders in `/src/`, I could check their contents from another running terminal. Therefore, as soon as I saw that the contents appeared in the `crashes` and `hangs` folders, I stopped fuzzing.
+
+![image](https://github.com/zDragonLORD1010/Secure-System-Development-/blob/main/lab4/task2_img/output.png)
+
+The entire contents of the `output` folder can be viewed at this link: [`output`](https://github.com/zDragonLORD1010/Secure-System-Development-/tree/main/lab4/task2_data/output/default)
+
+### Analyze the results
+
+#### `fuzzer_stats`, some `crashes`, and `hangs`:
+
+![image](https://github.com/zDragonLORD1010/Secure-System-Development-/blob/main/lab4/task2_img/stat.png)
+
+![image](https://github.com/zDragonLORD1010/Secure-System-Development-/blob/main/lab4/task2_img/output.png)
+
+Full report and all data received:
+
+- [`fuzzer_stats`](https://github.com/zDragonLORD1010/Secure-System-Development-/blob/main/lab4/task2_data/output/default/fuzzer_stats)
+
+- [`crashes`](https://github.com/zDragonLORD1010/Secure-System-Development-/tree/main/lab4/task2_data/output/default/crashes)
+
+- [`hangs`](https://github.com/zDragonLORD1010/Secure-System-Development-/tree/main/lab4/task2_data/output/default/hangs)
+
+#### Program `crash`
+
+![image](https://github.com/zDragonLORD1010/Secure-System-Development-/blob/main/lab4/task2_img/crash.png)
+
+**Error:** ValueError: invalid literal for int() with base 16: '\udcbe'
+
+**Reason:** The decoder tries to interpret Unicode character '\udcbe' as hex digits
+
+**Possible fix:** I think you can just do a simple check on the input data and this will help solve the problem. For example like this:
+
+```bash
+if s[i] == '%':
+    if i+2 > len(s):
+        raise ValueError("Error")
+    if not (s[i+1] in '0123456789abcdefABCDEF' and 
+            s[i+2] in '0123456789abcdefABCDEF'):
+        raise ValueError("Error")
+```
+
+#### Program `hang`
+
+When I launched this `hang`, I waited and nothing changed. There were no errors or warnings, but I had to stop this check by pressing `Ctrl+C`. After that, I realized that there was no mistake, but an infinity loop was forming somewhere.
+
+![image](https://github.com/zDragonLORD1010/Secure-System-Development-/blob/main/lab4/task2_img/hang.png)
+
+**Reason:** Upon closer examination, I realized that the problem is contained in the indexes. In the case where there is a `+` in the input value, the index does not increase, which forces the code to endlessly perform the same check.
+
+**Possible fix:** I think that you just need to additionally check the index at the beginning, as I showed earlier, and, most importantly, do not forget to increase it (when checking `s[i] == '+'`).
+
+```bash
+if s[i] == '%':
+    if i+2 > len(s):
+        raise ValueError("Error")
+...
+elif s[i] == '+':
+    ret.append(' ')
+    i += 1
+```
+
+### Answers to questions
+
+#### Will the fuzzer ever terminate in the above experiment? Why/Why not?
+
+#### How coverage-guided fuzzers work? Is AFL coverage-guided?
+
+#### How to optimize a fuzzing campaign?
