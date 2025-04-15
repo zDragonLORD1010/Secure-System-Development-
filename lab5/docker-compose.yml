@@ -1,0 +1,24 @@
+services:
+  juice_shop:
+    image: bkimminich/juice-shop:latest
+    container_name: juice-shop-app
+    networks:
+      - secure-net
+
+  modsecurity:
+    image: owasp/modsecurity-crs:nginx
+    container_name: modsecurity-waf
+    depends_on:
+      - juice_shop
+    ports:
+      - "8080:8080"
+    environment:
+      - BACKEND=http://juice_shop:3000
+    networks:
+      - secure-net
+
+networks:
+  secure-net:
+    driver: bridge
+
+
