@@ -82,7 +82,21 @@ After applying the new rules, I became made sure that this vulnerable SQL code d
 
 ![image](https://github.com/user-attachments/assets/2e6a8e31-d32a-4c66-a4f2-41b47b5253e0)
 
+### Automated Sql test results
 
+After analyzing the application using the `sqlmap` command, I can see that out of 16,286, only 2 got error `401` (These two errors are most likely due to the content of the non-standard headers.), and most of them received error `403` when trying to enter SQL code. All standard Sql attempts based on Boolean values are blocked. So based on the conclusion:
 
+```bash
+[WARNING] POST parameter 'email' does not seem to be injectable
+[WARNING] POST parameter 'password' does not seem to be injectable
+```
 
+![image](https://github.com/user-attachments/assets/2e1d0ecb-9e54-415d-b650-2aa4b99481e5)
 
+## Used resources
+
+#### Screenshots of the first task: [link](https://github.com/zDragonLORD1010/Secure-System-Development-/tree/main/lab5/img)
+
+#### [`docker-compose.yml`](https://github.com/zDragonLORD1010/Secure-System-Development-/blob/main/lab5/docker-compose.yml)
+
+#### [`custom_rules.conf`](https://github.com/zDragonLORD1010/Secure-System-Development-/blob/main/lab5/custom_rules.conf)
