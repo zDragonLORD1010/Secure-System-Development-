@@ -1,0 +1,317 @@
+Report on dynamic used libraries by ELF executables in: /home
+
+---------- i386 (x86) ----------
+No executables found.
+
+---------- x86-64 ----------
+libc.so.6 (57 execs):
+	 -> /home/egor/snap/firefox/common/.mozilla/firefox/s71aifqd.default-1734379565335/gmp-gmpopenh264/2.6.0/libgmpopenh264.so
+	 -> /home/egor/.local/share/pypoetry/venv/lib/python3.12/site-packages/_cffi_backend.cpython-312-x86_64-linux-gnu.so
+	 -> /home/egor/.local/share/pypoetry/venv/lib/python3.12/site-packages/dulwich/_pack.cpython-312-x86_64-linux-gnu.so
+	 -> /home/egor/.local/share/pypoetry/venv/lib/python3.12/site-packages/dulwich/_diff_tree.cpython-312-x86_64-linux-gnu.so
+	 -> /home/egor/.local/share/pypoetry/venv/lib/python3.12/site-packages/dulwich/_objects.cpython-312-x86_64-linux-gnu.so
+	 -> /home/egor/.local/share/pypoetry/venv/lib/python3.12/site-packages/msgpack/_cmsgpack.cpython-312-x86_64-linux-gnu.so
+	 -> /home/egor/.local/share/pypoetry/venv/lib/python3.12/site-packages/charset_normalizer/md__mypyc.cpython-312-x86_64-linux-gnu.so
+	 -> /home/egor/.local/share/pypoetry/venv/lib/python3.12/site-packages/charset_normalizer/md.cpython-312-x86_64-linux-gnu.so
+	 -> /home/egor/.local/share/pypoetry/venv/lib/python3.12/site-packages/cryptography/hazmat/bindings/_rust.abi3.so
+	 -> /home/egor/.local/share/pypoetry/venv/lib/python3.12/site-packages/rapidfuzz/fuzz_cpp.cpython-312-x86_64-linux-gnu.so
+	 -> /home/egor/.local/share/pypoetry/venv/lib/python3.12/site-packages/rapidfuzz/fuzz_cpp_avx2.cpython-312-x86_64-linux-gnu.so
+	 -> /home/egor/.local/share/pypoetry/venv/lib/python3.12/site-packages/rapidfuzz/utils_cpp.cpython-312-x86_64-linux-gnu.so
+	 -> /home/egor/.local/share/pypoetry/venv/lib/python3.12/site-packages/rapidfuzz/_feature_detector_cpp.cpython-312-x86_64-linux-gnu.so
+	 -> /home/egor/.local/share/pypoetry/venv/lib/python3.12/site-packages/rapidfuzz/process_cpp_impl.cpython-312-x86_64-linux-gnu.so
+	 -> /home/egor/.local/share/pypoetry/venv/lib/python3.12/site-packages/rapidfuzz/distance/metrics_cpp_avx2.cpython-312-x86_64-linux-gnu.so
+	 -> /home/egor/.local/share/pypoetry/venv/lib/python3.12/site-packages/rapidfuzz/distance/metrics_cpp.cpython-312-x86_64-linux-gnu.so
+	 -> /home/egor/.local/share/pypoetry/venv/lib/python3.12/site-packages/rapidfuzz/distance/_initialize_cpp.cpython-312-x86_64-linux-gnu.so
+	 -> /home/egor/.local/share/pypoetry/venv/lib/python3.12/site-packages/zstandard/backend_c.cpython-312-x86_64-linux-gnu.so
+	 -> /home/egor/.local/share/pypoetry/venv/lib/python3.12/site-packages/zstandard/_cffi.cpython-312-x86_64-linux-gnu.so
+	 -> /home/egor/.local/share/pypoetry/venv/bin/python3.12
+	 -> /home/egor/.local/share/pypoetry/venv/bin/python
+	 -> /home/egor/.local/share/pypoetry/venv/bin/python3
+	 -> /home/egor/pycharm-professional-2024.2.3/pycharm-2024.2.3/jbr/lib/jexec
+	 -> /home/egor/pycharm-professional-2024.2.3/pycharm-2024.2.3/jbr/lib/chrome-sandbox
+	 -> /home/egor/pycharm-professional-2024.2.3/pycharm-2024.2.3/jbr/lib/jcef_helper
+	 -> /home/egor/pycharm-professional-2024.2.3/pycharm-2024.2.3/jbr/lib/jspawnhelper
+	 -> /home/egor/pycharm-professional-2024.2.3/pycharm-2024.2.3/jbr/bin/jcmd
+	 -> /home/egor/pycharm-professional-2024.2.3/pycharm-2024.2.3/jbr/bin/jrunscript
+	 -> /home/egor/pycharm-professional-2024.2.3/pycharm-2024.2.3/jbr/bin/jstack
+	 -> /home/egor/pycharm-professional-2024.2.3/pycharm-2024.2.3/jbr/bin/jwebserver
+	 -> /home/egor/pycharm-professional-2024.2.3/pycharm-2024.2.3/jbr/bin/jinfo
+	 -> /home/egor/pycharm-professional-2024.2.3/pycharm-2024.2.3/jbr/bin/rmiregistry
+	 -> /home/egor/pycharm-professional-2024.2.3/pycharm-2024.2.3/jbr/bin/jhsdb
+	 -> /home/egor/pycharm-professional-2024.2.3/pycharm-2024.2.3/jbr/bin/jfr
+	 -> /home/egor/pycharm-professional-2024.2.3/pycharm-2024.2.3/jbr/bin/serialver
+	 -> /home/egor/pycharm-professional-2024.2.3/pycharm-2024.2.3/jbr/bin/jps
+	 -> /home/egor/pycharm-professional-2024.2.3/pycharm-2024.2.3/jbr/bin/java
+	 -> /home/egor/pycharm-professional-2024.2.3/pycharm-2024.2.3/jbr/bin/keytool
+	 -> /home/egor/pycharm-professional-2024.2.3/pycharm-2024.2.3/jbr/bin/jmap
+	 -> /home/egor/pycharm-professional-2024.2.3/pycharm-2024.2.3/jbr/bin/jstat
+	 -> /home/egor/pycharm-professional-2024.2.3/pycharm-2024.2.3/jbr/bin/jdb
+	 -> /home/egor/pycharm-professional-2024.2.3/pycharm-2024.2.3/jbr/bin/javac
+	 -> /home/egor/pycharm-professional-2024.2.3/pycharm-2024.2.3/jbr/bin/javadoc
+	 -> /home/egor/pycharm-professional-2024.2.3/pycharm-2024.2.3/plugins/python-ce/helpers/coveragepy_old/coverage/tracer.cpython-310-x86_64-linux-gnu.so
+	 -> /home/egor/pycharm-professional-2024.2.3/pycharm-2024.2.3/plugins/remote-dev-server/selfcontained/bin/xkbcomp
+	 -> /home/egor/pycharm-professional-2024.2.3/pycharm-2024.2.3/plugins/remote-dev-server/selfcontained/bin/Xvfb
+	 -> /home/egor/pycharm-professional-2024.2.3/pycharm-2024.2.3/bin/pycharm
+	 -> /home/egor/pycharm-professional-2024.2.3/pycharm-2024.2.3/bin/remote-dev-server
+	 -> /home/egor/pycharm-professional-2024.2.3/pycharm-2024.2.3/bin/fsnotifier
+	 -> /home/egor/Desktop/Old Firefox Data/jddenlxk.default/gmp-gmpopenh264/2.3.2/libgmpopenh264.so
+	 -> /home/egor/.cache/pypoetry/virtualenvs/project-hangman-game-36go6yiK-py3.12/bin/python3.12
+	 -> /home/egor/.cache/pypoetry/virtualenvs/project-hangman-game-36go6yiK-py3.12/bin/python
+	 -> /home/egor/.cache/pypoetry/virtualenvs/project-hangman-game-36go6yiK-py3.12/bin/python3
+	 -> /home/egor/.cache/pypoetry/virtualenvs/s25-sqr-lab7-security-zdragonlord1010-main-36go6yiK-py3.12/bin/python3.12
+	 -> /home/egor/.cache/pypoetry/virtualenvs/s25-sqr-lab7-security-zdragonlord1010-main-36go6yiK-py3.12/bin/python
+	 -> /home/egor/.cache/pypoetry/virtualenvs/s25-sqr-lab7-security-zdragonlord1010-main-36go6yiK-py3.12/bin/python3
+	 -> /home/egor/.cache/JetBrains/PyCharm2024.2/full-line/models/ef69ffdc-abe6-3484-9e5b-ba82d57c909a/full-line-inference.zip_extracted/full-line-inference
+
+libpthread.so.0 (42 execs):
+	 -> /home/egor/snap/firefox/common/.mozilla/firefox/s71aifqd.default-1734379565335/gmp-gmpopenh264/2.6.0/libgmpopenh264.so
+	 -> /home/egor/.local/share/pypoetry/venv/lib/python3.12/site-packages/_cffi_backend.cpython-312-x86_64-linux-gnu.so
+	 -> /home/egor/.local/share/pypoetry/venv/lib/python3.12/site-packages/dulwich/_pack.cpython-312-x86_64-linux-gnu.so
+	 -> /home/egor/.local/share/pypoetry/venv/lib/python3.12/site-packages/dulwich/_diff_tree.cpython-312-x86_64-linux-gnu.so
+	 -> /home/egor/.local/share/pypoetry/venv/lib/python3.12/site-packages/dulwich/_objects.cpython-312-x86_64-linux-gnu.so
+	 -> /home/egor/.local/share/pypoetry/venv/lib/python3.12/site-packages/msgpack/_cmsgpack.cpython-312-x86_64-linux-gnu.so
+	 -> /home/egor/.local/share/pypoetry/venv/lib/python3.12/site-packages/charset_normalizer/md__mypyc.cpython-312-x86_64-linux-gnu.so
+	 -> /home/egor/.local/share/pypoetry/venv/lib/python3.12/site-packages/charset_normalizer/md.cpython-312-x86_64-linux-gnu.so
+	 -> /home/egor/.local/share/pypoetry/venv/lib/python3.12/site-packages/rapidfuzz/fuzz_cpp.cpython-312-x86_64-linux-gnu.so
+	 -> /home/egor/.local/share/pypoetry/venv/lib/python3.12/site-packages/rapidfuzz/fuzz_cpp_avx2.cpython-312-x86_64-linux-gnu.so
+	 -> /home/egor/.local/share/pypoetry/venv/lib/python3.12/site-packages/rapidfuzz/utils_cpp.cpython-312-x86_64-linux-gnu.so
+	 -> /home/egor/.local/share/pypoetry/venv/lib/python3.12/site-packages/rapidfuzz/_feature_detector_cpp.cpython-312-x86_64-linux-gnu.so
+	 -> /home/egor/.local/share/pypoetry/venv/lib/python3.12/site-packages/rapidfuzz/process_cpp_impl.cpython-312-x86_64-linux-gnu.so
+	 -> /home/egor/.local/share/pypoetry/venv/lib/python3.12/site-packages/rapidfuzz/distance/metrics_cpp_avx2.cpython-312-x86_64-linux-gnu.so
+	 -> /home/egor/.local/share/pypoetry/venv/lib/python3.12/site-packages/rapidfuzz/distance/metrics_cpp.cpython-312-x86_64-linux-gnu.so
+	 -> /home/egor/.local/share/pypoetry/venv/lib/python3.12/site-packages/rapidfuzz/distance/_initialize_cpp.cpython-312-x86_64-linux-gnu.so
+	 -> /home/egor/.local/share/pypoetry/venv/lib/python3.12/site-packages/zstandard/backend_c.cpython-312-x86_64-linux-gnu.so
+	 -> /home/egor/.local/share/pypoetry/venv/lib/python3.12/site-packages/zstandard/_cffi.cpython-312-x86_64-linux-gnu.so
+	 -> /home/egor/pycharm-professional-2024.2.3/pycharm-2024.2.3/jbr/lib/chrome-sandbox
+	 -> /home/egor/pycharm-professional-2024.2.3/pycharm-2024.2.3/jbr/lib/jcef_helper
+	 -> /home/egor/pycharm-professional-2024.2.3/pycharm-2024.2.3/jbr/bin/jcmd
+	 -> /home/egor/pycharm-professional-2024.2.3/pycharm-2024.2.3/jbr/bin/jrunscript
+	 -> /home/egor/pycharm-professional-2024.2.3/pycharm-2024.2.3/jbr/bin/jstack
+	 -> /home/egor/pycharm-professional-2024.2.3/pycharm-2024.2.3/jbr/bin/jwebserver
+	 -> /home/egor/pycharm-professional-2024.2.3/pycharm-2024.2.3/jbr/bin/jinfo
+	 -> /home/egor/pycharm-professional-2024.2.3/pycharm-2024.2.3/jbr/bin/rmiregistry
+	 -> /home/egor/pycharm-professional-2024.2.3/pycharm-2024.2.3/jbr/bin/jhsdb
+	 -> /home/egor/pycharm-professional-2024.2.3/pycharm-2024.2.3/jbr/bin/jfr
+	 -> /home/egor/pycharm-professional-2024.2.3/pycharm-2024.2.3/jbr/bin/serialver
+	 -> /home/egor/pycharm-professional-2024.2.3/pycharm-2024.2.3/jbr/bin/jps
+	 -> /home/egor/pycharm-professional-2024.2.3/pycharm-2024.2.3/jbr/bin/java
+	 -> /home/egor/pycharm-professional-2024.2.3/pycharm-2024.2.3/jbr/bin/keytool
+	 -> /home/egor/pycharm-professional-2024.2.3/pycharm-2024.2.3/jbr/bin/jmap
+	 -> /home/egor/pycharm-professional-2024.2.3/pycharm-2024.2.3/jbr/bin/jstat
+	 -> /home/egor/pycharm-professional-2024.2.3/pycharm-2024.2.3/jbr/bin/jdb
+	 -> /home/egor/pycharm-professional-2024.2.3/pycharm-2024.2.3/jbr/bin/javac
+	 -> /home/egor/pycharm-professional-2024.2.3/pycharm-2024.2.3/jbr/bin/javadoc
+	 -> /home/egor/pycharm-professional-2024.2.3/pycharm-2024.2.3/plugins/remote-dev-server/selfcontained/bin/Xvfb
+	 -> /home/egor/pycharm-professional-2024.2.3/pycharm-2024.2.3/bin/pycharm
+	 -> /home/egor/pycharm-professional-2024.2.3/pycharm-2024.2.3/bin/remote-dev-server
+	 -> /home/egor/Desktop/Old Firefox Data/jddenlxk.default/gmp-gmpopenh264/2.3.2/libgmpopenh264.so
+	 -> /home/egor/.cache/JetBrains/PyCharm2024.2/full-line/models/ef69ffdc-abe6-3484-9e5b-ba82d57c909a/full-line-inference.zip_extracted/full-line-inference
+
+libz.so.1 (26 execs):
+	 -> /home/egor/.local/share/pypoetry/venv/bin/python3.12
+	 -> /home/egor/.local/share/pypoetry/venv/bin/python
+	 -> /home/egor/.local/share/pypoetry/venv/bin/python3
+	 -> /home/egor/pycharm-professional-2024.2.3/pycharm-2024.2.3/jbr/bin/jcmd
+	 -> /home/egor/pycharm-professional-2024.2.3/pycharm-2024.2.3/jbr/bin/jrunscript
+	 -> /home/egor/pycharm-professional-2024.2.3/pycharm-2024.2.3/jbr/bin/jstack
+	 -> /home/egor/pycharm-professional-2024.2.3/pycharm-2024.2.3/jbr/bin/jwebserver
+	 -> /home/egor/pycharm-professional-2024.2.3/pycharm-2024.2.3/jbr/bin/jinfo
+	 -> /home/egor/pycharm-professional-2024.2.3/pycharm-2024.2.3/jbr/bin/rmiregistry
+	 -> /home/egor/pycharm-professional-2024.2.3/pycharm-2024.2.3/jbr/bin/jhsdb
+	 -> /home/egor/pycharm-professional-2024.2.3/pycharm-2024.2.3/jbr/bin/jfr
+	 -> /home/egor/pycharm-professional-2024.2.3/pycharm-2024.2.3/jbr/bin/serialver
+	 -> /home/egor/pycharm-professional-2024.2.3/pycharm-2024.2.3/jbr/bin/jps
+	 -> /home/egor/pycharm-professional-2024.2.3/pycharm-2024.2.3/jbr/bin/java
+	 -> /home/egor/pycharm-professional-2024.2.3/pycharm-2024.2.3/jbr/bin/keytool
+	 -> /home/egor/pycharm-professional-2024.2.3/pycharm-2024.2.3/jbr/bin/jmap
+	 -> /home/egor/pycharm-professional-2024.2.3/pycharm-2024.2.3/jbr/bin/jstat
+	 -> /home/egor/pycharm-professional-2024.2.3/pycharm-2024.2.3/jbr/bin/jdb
+	 -> /home/egor/pycharm-professional-2024.2.3/pycharm-2024.2.3/jbr/bin/javac
+	 -> /home/egor/pycharm-professional-2024.2.3/pycharm-2024.2.3/jbr/bin/javadoc
+	 -> /home/egor/.cache/pypoetry/virtualenvs/project-hangman-game-36go6yiK-py3.12/bin/python3.12
+	 -> /home/egor/.cache/pypoetry/virtualenvs/project-hangman-game-36go6yiK-py3.12/bin/python
+	 -> /home/egor/.cache/pypoetry/virtualenvs/project-hangman-game-36go6yiK-py3.12/bin/python3
+	 -> /home/egor/.cache/pypoetry/virtualenvs/s25-sqr-lab7-security-zdragonlord1010-main-36go6yiK-py3.12/bin/python3.12
+	 -> /home/egor/.cache/pypoetry/virtualenvs/s25-sqr-lab7-security-zdragonlord1010-main-36go6yiK-py3.12/bin/python
+	 -> /home/egor/.cache/pypoetry/virtualenvs/s25-sqr-lab7-security-zdragonlord1010-main-36go6yiK-py3.12/bin/python3
+
+libdl.so.2 (24 execs):
+	 -> /home/egor/.local/share/pypoetry/venv/lib/python3.12/site-packages/dulwich/_pack.cpython-312-x86_64-linux-gnu.so
+	 -> /home/egor/.local/share/pypoetry/venv/lib/python3.12/site-packages/dulwich/_diff_tree.cpython-312-x86_64-linux-gnu.so
+	 -> /home/egor/.local/share/pypoetry/venv/lib/python3.12/site-packages/dulwich/_objects.cpython-312-x86_64-linux-gnu.so
+	 -> /home/egor/pycharm-professional-2024.2.3/pycharm-2024.2.3/jbr/bin/jcmd
+	 -> /home/egor/pycharm-professional-2024.2.3/pycharm-2024.2.3/jbr/bin/jrunscript
+	 -> /home/egor/pycharm-professional-2024.2.3/pycharm-2024.2.3/jbr/bin/jstack
+	 -> /home/egor/pycharm-professional-2024.2.3/pycharm-2024.2.3/jbr/bin/jwebserver
+	 -> /home/egor/pycharm-professional-2024.2.3/pycharm-2024.2.3/jbr/bin/jinfo
+	 -> /home/egor/pycharm-professional-2024.2.3/pycharm-2024.2.3/jbr/bin/rmiregistry
+	 -> /home/egor/pycharm-professional-2024.2.3/pycharm-2024.2.3/jbr/bin/jhsdb
+	 -> /home/egor/pycharm-professional-2024.2.3/pycharm-2024.2.3/jbr/bin/jfr
+	 -> /home/egor/pycharm-professional-2024.2.3/pycharm-2024.2.3/jbr/bin/serialver
+	 -> /home/egor/pycharm-professional-2024.2.3/pycharm-2024.2.3/jbr/bin/jps
+	 -> /home/egor/pycharm-professional-2024.2.3/pycharm-2024.2.3/jbr/bin/java
+	 -> /home/egor/pycharm-professional-2024.2.3/pycharm-2024.2.3/jbr/bin/keytool
+	 -> /home/egor/pycharm-professional-2024.2.3/pycharm-2024.2.3/jbr/bin/jmap
+	 -> /home/egor/pycharm-professional-2024.2.3/pycharm-2024.2.3/jbr/bin/jstat
+	 -> /home/egor/pycharm-professional-2024.2.3/pycharm-2024.2.3/jbr/bin/jdb
+	 -> /home/egor/pycharm-professional-2024.2.3/pycharm-2024.2.3/jbr/bin/javac
+	 -> /home/egor/pycharm-professional-2024.2.3/pycharm-2024.2.3/jbr/bin/javadoc
+	 -> /home/egor/pycharm-professional-2024.2.3/pycharm-2024.2.3/plugins/remote-dev-server/selfcontained/bin/Xvfb
+	 -> /home/egor/pycharm-professional-2024.2.3/pycharm-2024.2.3/bin/pycharm
+	 -> /home/egor/pycharm-professional-2024.2.3/pycharm-2024.2.3/bin/remote-dev-server
+	 -> /home/egor/.cache/JetBrains/PyCharm2024.2/full-line/models/ef69ffdc-abe6-3484-9e5b-ba82d57c909a/full-line-inference.zip_extracted/full-line-inference
+
+libm.so.6 (21 execs):
+	 -> /home/egor/snap/firefox/common/.mozilla/firefox/s71aifqd.default-1734379565335/gmp-gmpopenh264/2.6.0/libgmpopenh264.so
+	 -> /home/egor/.local/share/pypoetry/venv/lib/python3.12/site-packages/rapidfuzz/fuzz_cpp.cpython-312-x86_64-linux-gnu.so
+	 -> /home/egor/.local/share/pypoetry/venv/lib/python3.12/site-packages/rapidfuzz/fuzz_cpp_avx2.cpython-312-x86_64-linux-gnu.so
+	 -> /home/egor/.local/share/pypoetry/venv/lib/python3.12/site-packages/rapidfuzz/utils_cpp.cpython-312-x86_64-linux-gnu.so
+	 -> /home/egor/.local/share/pypoetry/venv/lib/python3.12/site-packages/rapidfuzz/_feature_detector_cpp.cpython-312-x86_64-linux-gnu.so
+	 -> /home/egor/.local/share/pypoetry/venv/lib/python3.12/site-packages/rapidfuzz/process_cpp_impl.cpython-312-x86_64-linux-gnu.so
+	 -> /home/egor/.local/share/pypoetry/venv/lib/python3.12/site-packages/rapidfuzz/distance/metrics_cpp_avx2.cpython-312-x86_64-linux-gnu.so
+	 -> /home/egor/.local/share/pypoetry/venv/lib/python3.12/site-packages/rapidfuzz/distance/metrics_cpp.cpython-312-x86_64-linux-gnu.so
+	 -> /home/egor/.local/share/pypoetry/venv/lib/python3.12/site-packages/rapidfuzz/distance/_initialize_cpp.cpython-312-x86_64-linux-gnu.so
+	 -> /home/egor/.local/share/pypoetry/venv/bin/python3.12
+	 -> /home/egor/.local/share/pypoetry/venv/bin/python
+	 -> /home/egor/.local/share/pypoetry/venv/bin/python3
+	 -> /home/egor/pycharm-professional-2024.2.3/pycharm-2024.2.3/plugins/remote-dev-server/selfcontained/bin/Xvfb
+	 -> /home/egor/Desktop/Old Firefox Data/jddenlxk.default/gmp-gmpopenh264/2.3.2/libgmpopenh264.so
+	 -> /home/egor/.cache/pypoetry/virtualenvs/project-hangman-game-36go6yiK-py3.12/bin/python3.12
+	 -> /home/egor/.cache/pypoetry/virtualenvs/project-hangman-game-36go6yiK-py3.12/bin/python
+	 -> /home/egor/.cache/pypoetry/virtualenvs/project-hangman-game-36go6yiK-py3.12/bin/python3
+	 -> /home/egor/.cache/pypoetry/virtualenvs/s25-sqr-lab7-security-zdragonlord1010-main-36go6yiK-py3.12/bin/python3.12
+	 -> /home/egor/.cache/pypoetry/virtualenvs/s25-sqr-lab7-security-zdragonlord1010-main-36go6yiK-py3.12/bin/python
+	 -> /home/egor/.cache/pypoetry/virtualenvs/s25-sqr-lab7-security-zdragonlord1010-main-36go6yiK-py3.12/bin/python3
+	 -> /home/egor/.cache/JetBrains/PyCharm2024.2/full-line/models/ef69ffdc-abe6-3484-9e5b-ba82d57c909a/full-line-inference.zip_extracted/full-line-inference
+
+libgcc_s.so.1 (18 execs):
+	 -> /home/egor/snap/firefox/common/.mozilla/firefox/s71aifqd.default-1734379565335/gmp-gmpopenh264/2.6.0/libgmpopenh264.so
+	 -> /home/egor/.local/share/pypoetry/venv/lib/python3.12/site-packages/dulwich/_pack.cpython-312-x86_64-linux-gnu.so
+	 -> /home/egor/.local/share/pypoetry/venv/lib/python3.12/site-packages/dulwich/_diff_tree.cpython-312-x86_64-linux-gnu.so
+	 -> /home/egor/.local/share/pypoetry/venv/lib/python3.12/site-packages/dulwich/_objects.cpython-312-x86_64-linux-gnu.so
+	 -> /home/egor/.local/share/pypoetry/venv/lib/python3.12/site-packages/cryptography/hazmat/bindings/_rust.abi3.so
+	 -> /home/egor/.local/share/pypoetry/venv/lib/python3.12/site-packages/rapidfuzz/fuzz_cpp.cpython-312-x86_64-linux-gnu.so
+	 -> /home/egor/.local/share/pypoetry/venv/lib/python3.12/site-packages/rapidfuzz/fuzz_cpp_avx2.cpython-312-x86_64-linux-gnu.so
+	 -> /home/egor/.local/share/pypoetry/venv/lib/python3.12/site-packages/rapidfuzz/utils_cpp.cpython-312-x86_64-linux-gnu.so
+	 -> /home/egor/.local/share/pypoetry/venv/lib/python3.12/site-packages/rapidfuzz/_feature_detector_cpp.cpython-312-x86_64-linux-gnu.so
+	 -> /home/egor/.local/share/pypoetry/venv/lib/python3.12/site-packages/rapidfuzz/process_cpp_impl.cpython-312-x86_64-linux-gnu.so
+	 -> /home/egor/.local/share/pypoetry/venv/lib/python3.12/site-packages/rapidfuzz/distance/metrics_cpp_avx2.cpython-312-x86_64-linux-gnu.so
+	 -> /home/egor/.local/share/pypoetry/venv/lib/python3.12/site-packages/rapidfuzz/distance/metrics_cpp.cpython-312-x86_64-linux-gnu.so
+	 -> /home/egor/.local/share/pypoetry/venv/lib/python3.12/site-packages/rapidfuzz/distance/_initialize_cpp.cpython-312-x86_64-linux-gnu.so
+	 -> /home/egor/pycharm-professional-2024.2.3/pycharm-2024.2.3/jbr/lib/chrome-sandbox
+	 -> /home/egor/pycharm-professional-2024.2.3/pycharm-2024.2.3/jbr/lib/jcef_helper
+	 -> /home/egor/pycharm-professional-2024.2.3/pycharm-2024.2.3/bin/pycharm
+	 -> /home/egor/pycharm-professional-2024.2.3/pycharm-2024.2.3/bin/remote-dev-server
+	 -> /home/egor/Desktop/Old Firefox Data/jddenlxk.default/gmp-gmpopenh264/2.3.2/libgmpopenh264.so
+
+libjli.so (17 execs):
+	 -> /home/egor/pycharm-professional-2024.2.3/pycharm-2024.2.3/jbr/bin/jcmd
+	 -> /home/egor/pycharm-professional-2024.2.3/pycharm-2024.2.3/jbr/bin/jrunscript
+	 -> /home/egor/pycharm-professional-2024.2.3/pycharm-2024.2.3/jbr/bin/jstack
+	 -> /home/egor/pycharm-professional-2024.2.3/pycharm-2024.2.3/jbr/bin/jwebserver
+	 -> /home/egor/pycharm-professional-2024.2.3/pycharm-2024.2.3/jbr/bin/jinfo
+	 -> /home/egor/pycharm-professional-2024.2.3/pycharm-2024.2.3/jbr/bin/rmiregistry
+	 -> /home/egor/pycharm-professional-2024.2.3/pycharm-2024.2.3/jbr/bin/jhsdb
+	 -> /home/egor/pycharm-professional-2024.2.3/pycharm-2024.2.3/jbr/bin/jfr
+	 -> /home/egor/pycharm-professional-2024.2.3/pycharm-2024.2.3/jbr/bin/serialver
+	 -> /home/egor/pycharm-professional-2024.2.3/pycharm-2024.2.3/jbr/bin/jps
+	 -> /home/egor/pycharm-professional-2024.2.3/pycharm-2024.2.3/jbr/bin/java
+	 -> /home/egor/pycharm-professional-2024.2.3/pycharm-2024.2.3/jbr/bin/keytool
+	 -> /home/egor/pycharm-professional-2024.2.3/pycharm-2024.2.3/jbr/bin/jmap
+	 -> /home/egor/pycharm-professional-2024.2.3/pycharm-2024.2.3/jbr/bin/jstat
+	 -> /home/egor/pycharm-professional-2024.2.3/pycharm-2024.2.3/jbr/bin/jdb
+	 -> /home/egor/pycharm-professional-2024.2.3/pycharm-2024.2.3/jbr/bin/javac
+	 -> /home/egor/pycharm-professional-2024.2.3/pycharm-2024.2.3/jbr/bin/javadoc
+
+libstdc++.so.6 (10 execs):
+	 -> /home/egor/snap/firefox/common/.mozilla/firefox/s71aifqd.default-1734379565335/gmp-gmpopenh264/2.6.0/libgmpopenh264.so
+	 -> /home/egor/.local/share/pypoetry/venv/lib/python3.12/site-packages/rapidfuzz/fuzz_cpp.cpython-312-x86_64-linux-gnu.so
+	 -> /home/egor/.local/share/pypoetry/venv/lib/python3.12/site-packages/rapidfuzz/fuzz_cpp_avx2.cpython-312-x86_64-linux-gnu.so
+	 -> /home/egor/.local/share/pypoetry/venv/lib/python3.12/site-packages/rapidfuzz/utils_cpp.cpython-312-x86_64-linux-gnu.so
+	 -> /home/egor/.local/share/pypoetry/venv/lib/python3.12/site-packages/rapidfuzz/_feature_detector_cpp.cpython-312-x86_64-linux-gnu.so
+	 -> /home/egor/.local/share/pypoetry/venv/lib/python3.12/site-packages/rapidfuzz/process_cpp_impl.cpython-312-x86_64-linux-gnu.so
+	 -> /home/egor/.local/share/pypoetry/venv/lib/python3.12/site-packages/rapidfuzz/distance/metrics_cpp_avx2.cpython-312-x86_64-linux-gnu.so
+	 -> /home/egor/.local/share/pypoetry/venv/lib/python3.12/site-packages/rapidfuzz/distance/metrics_cpp.cpython-312-x86_64-linux-gnu.so
+	 -> /home/egor/.local/share/pypoetry/venv/lib/python3.12/site-packages/rapidfuzz/distance/_initialize_cpp.cpython-312-x86_64-linux-gnu.so
+	 -> /home/egor/Desktop/Old Firefox Data/jddenlxk.default/gmp-gmpopenh264/2.3.2/libgmpopenh264.so
+
+libexpat.so.1 (9 execs):
+	 -> /home/egor/.local/share/pypoetry/venv/bin/python3.12
+	 -> /home/egor/.local/share/pypoetry/venv/bin/python
+	 -> /home/egor/.local/share/pypoetry/venv/bin/python3
+	 -> /home/egor/.cache/pypoetry/virtualenvs/project-hangman-game-36go6yiK-py3.12/bin/python3.12
+	 -> /home/egor/.cache/pypoetry/virtualenvs/project-hangman-game-36go6yiK-py3.12/bin/python
+	 -> /home/egor/.cache/pypoetry/virtualenvs/project-hangman-game-36go6yiK-py3.12/bin/python3
+	 -> /home/egor/.cache/pypoetry/virtualenvs/s25-sqr-lab7-security-zdragonlord1010-main-36go6yiK-py3.12/bin/python3.12
+	 -> /home/egor/.cache/pypoetry/virtualenvs/s25-sqr-lab7-security-zdragonlord1010-main-36go6yiK-py3.12/bin/python
+	 -> /home/egor/.cache/pypoetry/virtualenvs/s25-sqr-lab7-security-zdragonlord1010-main-36go6yiK-py3.12/bin/python3
+
+ld-linux-x86-64.so.2 (8 execs):
+	 -> /home/egor/.local/share/pypoetry/venv/lib/python3.12/site-packages/_cffi_backend.cpython-312-x86_64-linux-gnu.so
+	 -> /home/egor/.local/share/pypoetry/venv/lib/python3.12/site-packages/dulwich/_pack.cpython-312-x86_64-linux-gnu.so
+	 -> /home/egor/.local/share/pypoetry/venv/lib/python3.12/site-packages/dulwich/_diff_tree.cpython-312-x86_64-linux-gnu.so
+	 -> /home/egor/.local/share/pypoetry/venv/lib/python3.12/site-packages/dulwich/_objects.cpython-312-x86_64-linux-gnu.so
+	 -> /home/egor/.local/share/pypoetry/venv/lib/python3.12/site-packages/cryptography/hazmat/bindings/_rust.abi3.so
+	 -> /home/egor/.local/share/pypoetry/venv/lib/python3.12/site-packages/rapidfuzz/process_cpp_impl.cpython-312-x86_64-linux-gnu.so
+	 -> /home/egor/pycharm-professional-2024.2.3/pycharm-2024.2.3/jbr/lib/jcef_helper
+	 -> /home/egor/.cache/JetBrains/PyCharm2024.2/full-line/models/ef69ffdc-abe6-3484-9e5b-ba82d57c909a/full-line-inference.zip_extracted/full-line-inference
+
+librt.so.1 (6 execs):
+	 -> /home/egor/.local/share/pypoetry/venv/lib/python3.12/site-packages/dulwich/_pack.cpython-312-x86_64-linux-gnu.so
+	 -> /home/egor/.local/share/pypoetry/venv/lib/python3.12/site-packages/dulwich/_diff_tree.cpython-312-x86_64-linux-gnu.so
+	 -> /home/egor/.local/share/pypoetry/venv/lib/python3.12/site-packages/dulwich/_objects.cpython-312-x86_64-linux-gnu.so
+	 -> /home/egor/pycharm-professional-2024.2.3/pycharm-2024.2.3/bin/pycharm
+	 -> /home/egor/pycharm-professional-2024.2.3/pycharm-2024.2.3/bin/remote-dev-server
+	 -> /home/egor/.cache/JetBrains/PyCharm2024.2/full-line/models/ef69ffdc-abe6-3484-9e5b-ba82d57c909a/full-line-inference.zip_extracted/full-line-inference
+
+libcef.so (1 execs):
+	 -> /home/egor/pycharm-professional-2024.2.3/pycharm-2024.2.3/jbr/lib/jcef_helper
+
+libX11.so.6 (1 execs):
+	 -> /home/egor/pycharm-professional-2024.2.3/pycharm-2024.2.3/plugins/remote-dev-server/selfcontained/bin/xkbcomp
+
+libxkbfile.so.1 (1 execs):
+	 -> /home/egor/pycharm-professional-2024.2.3/pycharm-2024.2.3/plugins/remote-dev-server/selfcontained/bin/xkbcomp
+
+libselinux.so.1 (1 execs):
+	 -> /home/egor/pycharm-professional-2024.2.3/pycharm-2024.2.3/plugins/remote-dev-server/selfcontained/bin/Xvfb
+
+libcrypto.so.10 (1 execs):
+	 -> /home/egor/pycharm-professional-2024.2.3/pycharm-2024.2.3/plugins/remote-dev-server/selfcontained/bin/Xvfb
+
+libGL.so.1 (1 execs):
+	 -> /home/egor/pycharm-professional-2024.2.3/pycharm-2024.2.3/plugins/remote-dev-server/selfcontained/bin/Xvfb
+
+libpixman-1.so.0 (1 execs):
+	 -> /home/egor/pycharm-professional-2024.2.3/pycharm-2024.2.3/plugins/remote-dev-server/selfcontained/bin/Xvfb
+
+libXfont2.so.2 (1 execs):
+	 -> /home/egor/pycharm-professional-2024.2.3/pycharm-2024.2.3/plugins/remote-dev-server/selfcontained/bin/Xvfb
+
+libXau.so.6 (1 execs):
+	 -> /home/egor/pycharm-professional-2024.2.3/pycharm-2024.2.3/plugins/remote-dev-server/selfcontained/bin/Xvfb
+
+libsystemd.so.0 (1 execs):
+	 -> /home/egor/pycharm-professional-2024.2.3/pycharm-2024.2.3/plugins/remote-dev-server/selfcontained/bin/Xvfb
+
+libxshmfence.so.1 (1 execs):
+	 -> /home/egor/pycharm-professional-2024.2.3/pycharm-2024.2.3/plugins/remote-dev-server/selfcontained/bin/Xvfb
+
+libXdmcp.so.6 (1 execs):
+	 -> /home/egor/pycharm-professional-2024.2.3/pycharm-2024.2.3/plugins/remote-dev-server/selfcontained/bin/Xvfb
+
+libpam_misc.so.0 (1 execs):
+	 -> /home/egor/pycharm-professional-2024.2.3/pycharm-2024.2.3/plugins/remote-dev-server/selfcontained/bin/Xvfb
+
+libpam.so.0 (1 execs):
+	 -> /home/egor/pycharm-professional-2024.2.3/pycharm-2024.2.3/plugins/remote-dev-server/selfcontained/bin/Xvfb
+
+libaudit.so.1 (1 execs):
+	 -> /home/egor/pycharm-professional-2024.2.3/pycharm-2024.2.3/plugins/remote-dev-server/selfcontained/bin/Xvfb
+
+
+---------- armv7 ----------
+No executables found.
+
+---------- aarch64 ----------
+No executables found.
