@@ -6,7 +6,7 @@
 
 **Telegram:** @EgorValikov
 
-**Github report:** https://github.com/zDragonLORD1010/Secure-System-Development-/blob/main/test_task/Report.md
+**Github report:** https://github.com/zDragonLORD1010/Secure-System-Development-/blob/main/test_task/README.md
 
 ## Introduction
 
