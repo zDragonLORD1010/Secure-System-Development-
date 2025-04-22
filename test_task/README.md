@@ -89,6 +89,6 @@ python3 auto_script.py
 
 ## Link to the full script
 
-[auto_script.py]()
+[auto_script.py](https://github.com/zDragonLORD1010/Secure-System-Development-/blob/main/test_task/auto_script.py)
 
 
