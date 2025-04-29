@@ -52,7 +52,9 @@ The core of the ESP32-S2 is a high-performance single-core 32-bit Xtensa LX7 pro
 
 ## Memory map analysis
 
-| Type of memory | Addresses | Type of tyre | Access control |
+### The built-in memory of the ESP32-S2 is divided into several regions:
+
+| Type of memory | Addresses | Type of bus | Access control |
 |----------------|--------------------|----------------|----------|
 | RTC FAST memory   |  0x3FF9E000 - 0x3FF9FFFF |  Data              |  YES
 | Internal ROM 1    |  0x3FFA0000 - 0x3FFAFFFF |  Data              |  NO
@@ -65,3 +67,80 @@ The core of the ESP32-S2 is a high-performance single-core 32-bit Xtensa LX7 pro
 | RTC FAST memory   |  0x40070000 - 0x40071FFF |  Instructions      |  YES
 | RTC SLOW Memory   |  0x50000000 - 0x50001FFF |  Data/Instructions |  YES
 
+### The external memory includes:
+
+- **ICache:** 0x3F000000 - 0x3F3FFFFF
+- **DCache:** 0x3F500000 - 0x3FF7FFFF
+- **ICache:** 0x40080000 - 0x407FFFFF
+
+## Protection mechanisms
+
+1. **Secure Boot.** Ensures that only authenticated software can be run on the device:
+
+- Guarantees the execution of only verified code. 
+- A chain of trust is used with verification of digital signatures at each stage of the download. 
+- RSA-PSS with 3072-bit keys is used, the public key is stored in eFuse. 
+- Supports revocation of keys.
+
+2. **Flash Encryption.** Used to encrypt the contents of external flash memory, protecting code and data at rest:
+
+- Encrypts external Flash using AES-256-XTS. 
+- The key is stored in eFuse and is accessible only by hardware.
+- Encryption is transparent to applications and takes place through the MMU cache.
+
+3. **Digital Signature Peripheral.** Used for secure device identification, TLS authentication, and other cryptographic operations:
+
+- Generates RSA signatures at the hardware level.
+- The private key remains hidden.
+
+4. **Memory Protection.** Prevents code execution in invalid areas and protects against buffer overflow vulnerabilities:
+
+- Controls access to memory and peripherals (read/write/execute). 
+- When rights are violated, there is an exception.
+
+5. **eFuse.** Hardware storage in which the data is irreversibly written:
+
+- Keys for Secure Boot and encryption.
+- Security configurations (JTAG, download, etc.).
+- Write and read lock flags.
+
+6. **Wi-Fi security.** Support for modern standards:
+
+- WPA3 (Personal and Enterprise).
+- Protected Management Frames (PMF).
+- OWE.
+- EAP authentication.
+
+## Boot Process
+
+1. The built—in loader starts from ROM - it is always the same and unchangeable.
+2. The ROM loader verifies the digital signature of the next loader in the external flash memory.
+3. If the signature is correct, the second—level loader is loaded and executed.
+4. The second loader verifies the signature of the main application.
+5. If everything is in order, the application starts.
+
+*(If secure download is enabled, each step is verified using an RSA signature)*
+
+## Security and potential vulnerabilities
+
+Despite the good protection, I believe that the ESP32-S2 could potentially contain the following vulnerabilities:
+
+- Secure Boot and Flash Encryption are powerful, but due to the fact that they mostly have to be manually configured, vulnerabilities may appear.
+
+- Error injection attacks are possible, especially if eFuse and keys are not protected.
+
+- Wi-Fi and USB OTG can contain vulnerabilities, especially in host mode.
+
+**I can recommend the following things:**
+
+- Use unique passwords.
+
+- Update and check the firmware.
+
+- Isolate IoT devices on the network.
+
+- Apply the principle of least privilege.
+
+## Conclusion
+
+I believe the ESP32-S2 is an energy efficient and secure microcontroller well suited for IoT devices. It has rich features, built-in USB support, and powerful protection mechanisms. At the same time, it is important to properly configure security and regularly update the firmware to protect against potential vulnerabilities.
