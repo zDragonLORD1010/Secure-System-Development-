@@ -27,15 +27,15 @@ The core of the ESP32-S2 is a high-performance single-core 32-bit Xtensa LX7 pro
 
 ### The ESP32-S2 has a wide range of integrated peripherals:
 
-- **Wi-Fi:** Built-in 2.4GHz Wi-Fi module, compatible with IEEE 802.11b/g/n standards.    
+- **Wi-Fi:** Built-in 2.4GHz Wi-Fi module, compatible with IEEE 802.11b/g/n standards.
+- **GPIO:** Up to 43 programmable general-purpose I/O ports.
+- **Touch interface:** Up to 14 touch-enabled I/O ports.
+- **ADC/DAC:** Analog-to-digital converters (2x12-bit SAR ADCs, up to 20 channels) and digital-to-analog converters (2x8-bit DACs).
 - **Timers:** Includes 4 universal 64-bit timers and 3 watchdog timers (2 MWDT, 1 RWDT).
 - **LED PWM:** Controller for controlling LEDs (up to 8 channels).
 - **Camera Interface:** Supports DVP 8/16 interface for connecting cameras.
 - **LCD:** Supports various LCD interfaces (8-bit serial RGB/8080/6800 via SPI2, 8/16/24-bit parallel via I2S).
-- **GPIO:** Up to 43 programmable general-purpose I/O ports.
-- **Touch interface:** Up to 14 touch-enabled I/O ports.
-- **ADC/DAC:** Analog-to-digital converters (2x12-bit SAR ADCs, up to 20 channels) and digital-to-analog converters (2x8-bit DACs).
-- **For communication with external devices**
+- **For communication with external devices:**
   - **USB OTG:** Provides the ability to work in device or host mode.
   - **I2C:** Supports serial data transfer protocol.
   - **I2S:** Supports an interface for transmitting and receiving digital audio data.
@@ -50,4 +50,4 @@ The core of the ESP32-S2 is a high-performance single-core 32-bit Xtensa LX7 pro
 - **DS (Digital signature module)**
 - **RNG (Random number generator)**
 
-## 
+## Memory map analysis
