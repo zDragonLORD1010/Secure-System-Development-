@@ -16,27 +16,27 @@ The ESP32-S2 is a single-chip system (SoC) designed for energy-efficient applica
 
 ## Architecture and main components
 
-The core of the ESP32-S2 is a high-performance single-core 32-bit Xtensa LX7 processor. This processor is capable of operating at a frequency of up to 240 MHz. The processor architecture provides separate buses for instructions and data. This separation allows simultaneous access to instructions and data.
+The core of the ESP32-S2 is a high-performance single-core 32-bit Xtensa LX7 processor. This processor is capable of operating at a frequency of up to 240 MHz. Separate buses for data and instructions are provided by the processor architecture. Data and instructions can be accessed simultaneously thanks to this division.
 
-### The ESP32-S2 memory subsystem includes several types of memory:
+### There are multiple memory types in the ESP32-S2 memory subsystem:
 
-- **ROM:** It contains 128 KB of ROM designed to store the bootloader and basic functions.   
-- **RAM:** Includes 320 KB of SRAM for storing data and instructions.   
+- **ROM:** It has 128 KB of ROM that is used to store the bootloader and other essential programs.     
+- **RAM:** Contains 320 KB of SRAM for information and command storage. 
 - **RTC:** Contains 16 KB of SRAM in the RTC area, which is used to operate in ultra-low power consumption modes.   
-- **External Memory Support:** ESP32-S2 supports connection of external SPI/SPI/SPI flash memory and external RAM.
+- **External Memory Support:** External SPI/SPI/SPI flash memory and external RAM can be connected to the ESP32-S2.
 
 ### The ESP32-S2 has a wide range of integrated peripherals:
 
-- **Wi-Fi:** Built-in 2.4GHz Wi-Fi module, compatible with IEEE 802.11b/g/n standards.
-- **GPIO:** Up to 43 programmable general-purpose I/O ports.
-- **Touch interface:** Up to 14 touch-enabled I/O ports.
-- **ADC/DAC:** Analog-to-digital converters (2x12-bit SAR ADCs, up to 20 channels) and digital-to-analog converters (2x8-bit DACs).
+- **Wi-Fi:** IEEE 802.11b/g/n compatible built-in 2.4GHz Wi-Fi module.
+- **GPIO:** General-purpose I/O ports with up to 43 programmable ports.
+- **Touch interface:** Up to 14 I/O ports that can be touched.
+- **ADC/DAC:** Digital-to-analog converters (2x8-bit DACs) and analog-to-digital converters (2x12-bit SAR ADCs, up to 20 channels).
 - **Timers:** Includes 4 universal 64-bit timers and 3 watchdog timers (2 MWDT, 1 RWDT).
 - **LED PWM:** Controller for controlling LEDs (up to 8 channels).
 - **Camera Interface:** Supports DVP 8/16 interface for connecting cameras.
 - **LCD:** Supports various LCD interfaces (8-bit serial RGB/8080/6800 via SPI2, 8/16/24-bit parallel via I2S).
 - **For communication with external devices:**
-  - **USB OTG:** Provides the ability to work in device or host mode.
+  - **USB OTG:** Enables device or host mode operation.
   - **I2C:** Supports serial data transfer protocol.
   - **I2S:** Supports an interface for transmitting and receiving digital audio data.
   - **SPI:** Supports peripheral interface in master and slave modes.
