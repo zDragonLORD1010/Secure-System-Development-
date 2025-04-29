@@ -51,3 +51,17 @@ The core of the ESP32-S2 is a high-performance single-core 32-bit Xtensa LX7 pro
 - **RNG (Random number generator)**
 
 ## Memory map analysis
+
+| Type of memory | Addresses | Type of tyre | Access control |
+|----------------|--------------------|----------------|----------|
+| RTC FAST memory   |  0x3FF9E000 - 0x3FF9FFFF |  Data              |  YES
+| Internal ROM 1    |  0x3FFA0000 - 0x3FFAFFFF |  Data              |  NO
+| Internal SRAM 0   |  0x3FFB0000 - 0x3FFB7FFF |  Data              |  YES
+| Internal SRAM 1   |  0x3FFB8000 - 0x3FFFFFFF |  Data              |  YES
+| Internal ROM 0    |  0x40000000 - 0x4000FFFF |  Instructions      |  NO
+| Internal ROM 1    |  0x40010000 - 0x4001FFFF |  Instructions      |  NO
+| Internal SRAM 0   |  0x40020000 - 0x40027FFF |  Instructions      |  YES
+| Internal SRAM 1   |  0x40028000 - 0x4006FFFF |  Instructions      |  YES
+| RTC FAST memory   |  0x40070000 - 0x40071FFF |  Instructions      |  YES
+| RTC SLOW Memory   |  0x50000000 - 0x50001FFF |  Data/Instructions |  YES
+
