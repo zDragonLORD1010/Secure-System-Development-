@@ -105,11 +105,35 @@ First of all, I figured out the file type and analyzed it using **ghidra**. I ha
 
 ## `task_2`
 
-First of all, I figured out the file type and analyzed it using **ghidra**. I have attached basic information about the file below:
+I had some problems with this task, so I analyzed it without running it. The ldd team did not provide any concrete results. However, I was able to look at the file characteristics in more detail through ghidra.
+
+![image](https://github.com/user-attachments/assets/9c8d9636-cc73-454d-9143-92b394f3c98b)
+
+![image](https://github.com/user-attachments/assets/29f4eaaf-6ac6-435d-9aca-2d6bbd062454)
+
+![image](https://github.com/user-attachments/assets/1f55d101-f19c-4462-934d-8240b52d50d5)
+
+![image](https://github.com/user-attachments/assets/57871f96-a595-4824-b891-975aa9ed8bbb)
+
+### Results of the `task_2` application analysis
+
+The `task_2` file is a `relocatable` (relocatable object file), not an executable, so there are no dynamic dependencies in it. This is most likely a Linux kernel object file, which explains the absence of the `main` function (`init_module` is used), as well as the presence of sections `.gnu.linkonce`, `__versions`, `.modinfo`. However, among the interesting findings, I discovered the flag (`license=flag{baee49fd4f7009ff6e932463791f28e6}`) using command `strings`. And also found out that this file is associated with `task_7` (`name=task_7`).
 
 ## `task_3`
 
-First of all, I figured out the file type and analyzed it using **ghidra**. I have attached basic information about the file below:
+I have the same difficulties with this program as with `task_2` because they are the same file types. So I took the same steps as in the case of `task_2`.
+
+![image](https://github.com/user-attachments/assets/9bba2fc3-fd72-4e9e-8478-6ae1da9320a8)
+
+![image](https://github.com/user-attachments/assets/d4ad8773-5aa1-4ef1-91e4-7ccb0d01cbf1)
+
+![image](https://github.com/user-attachments/assets/080e73c9-66be-4774-a143-00b9bf42b537)
+
+![image](https://github.com/user-attachments/assets/8a88c23a-0063-40ef-952d-fe7105bc69e3)
+
+### Results of the `task_2` application analysis
+
+The results of my analysis showed the same thing as in the case of `task_2`. However, I found some interesting facts for the `task_3` file. It is associated with `task_8` (`name=task_8`) and the string `"rEdWcNDya..."` it is most likely encrypted data (most likely it is a flag).
 
 ## `task_4`
 
