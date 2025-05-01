@@ -48,7 +48,7 @@ First of all, I figured out the file type and analyzed it using **ghidra**. I ha
 
 - Compares the entered string with `"flag{6057f13c496ecf7fd777ceb9e79ae285}"` (`strcmp()` requires an exact match).
 
-**6. Output**
+**6. Program output and termination**
 
 - If the flag is correct, the `"WIN"` message is displayed.
 - If the flag is incorrect, the `"TRY HARDER"` message is displayed.
