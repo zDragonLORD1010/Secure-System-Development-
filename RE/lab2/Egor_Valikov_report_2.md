@@ -131,7 +131,7 @@ I have the same difficulties with this program as with `task_2` because they are
 
 ![image](https://github.com/user-attachments/assets/8a88c23a-0063-40ef-952d-fe7105bc69e3)
 
-### Results of the `task_2` application analysis
+### Results of the `task_3` application analysis
 
 The results of my analysis showed the same thing as in the case of `task_2`. However, I found some interesting facts for the `task_3` file. It is associated with `task_8` (`name=task_8`) and the string `"rEdWcNDya..."` it is most likely encrypted data (most likely it is a flag).
 
