@@ -28,7 +28,7 @@ First of all, I figured out the file type and analyzed it using **ghidra**. I ha
 
 `task_0` is an ELF executable file (64-bit Linux binary), which is a simple flag checking program.
 
-#### Description of the application operation
+### Description of the application operation
 
 **1. Start of the program**
 
@@ -54,7 +54,7 @@ First of all, I figured out the file type and analyzed it using **ghidra**. I ha
 - If the flag is incorrect, the `"TRY HARDER"` message is displayed.
 - The program terminates with code `0` anyway.
 
-#### Usage example:
+### Usage example:
 
 ![image](https://github.com/user-attachments/assets/5e409f7c-9a9e-4931-a4a0-eab37585a92b)
 
