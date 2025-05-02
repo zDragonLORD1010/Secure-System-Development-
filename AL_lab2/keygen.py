@@ -6,7 +6,6 @@ def generate_license(hwid):
     byte_pairs = [md5_hash[i:i+2] for i in range(0, len(md5_hash), 2)]
     reversed_pairs = byte_pairs[::-1]
     license_key = ''.join(reversed_pairs)
-    
     return license_key
 
 if __name__ == "__main__":
