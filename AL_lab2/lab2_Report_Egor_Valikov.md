@@ -12,7 +12,7 @@
 
 ## Introduction
 
-In this lab, we explore reverse engineering and debugging techniques using tools such as `gdb`, `strace`, `ghidra`, and `ldd`. The goal is to analyze the provided application, which requires a license to run. The license is generated using the hardware identifier and stored somewhere in the file system.
+In this lab, we explore reverse engineering and debugging techniques using tools such as `gdb`, `strace`, `ghidra`, and `ldd`. The goal is to analyze the provided application, which requires a `license key` to run. The `license key` is generated using the hardware identifier and stored somewhere in the file system.
 
 ## Launching and checking the functions of the `hack_app` application
 
@@ -28,7 +28,7 @@ Initially, I had some problems launching `hack_app` due to the lack of `libssl1.
 
 1. Displays the message `"Welcome to Lab 2 super secure program!"`.
 
-2. Then it displays a message in which a unique HWID is generated based on the computer data and asks you to enter the `license key`.
+2. Then it displays a message in which a unique `HWID` is generated based on the computer data and asks you to enter the `license key`.
 
 3. After that, there are several options for the development of events:
 
