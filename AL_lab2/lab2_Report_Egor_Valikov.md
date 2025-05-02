@@ -16,7 +16,7 @@ In this lab, we explore reverse engineering and debugging techniques using tools
 
 ## Launching and checking the functions of the `hack_app` application
 
-### Initially, I had some problems launching `hack_app` due to the lack of `libssl1.1` in the system. Therefore, I spent some time fixing this error:
+Initially, I had some problems launching `hack_app` due to the lack of `libssl1.1` in the system. Therefore, I spent some time fixing this error:
 
 ![image](https://github.com/user-attachments/assets/0bc87359-9520-46b5-8e98-5b3493cfcc2d)
 
@@ -28,11 +28,11 @@ In this lab, we explore reverse engineering and debugging techniques using tools
 
 1. Displays the message `"Welcome to Lab 2 super secure program!"`.
 
-2. Then it displays a message in which a unique HWID is generated based on the computer data and asks you to enter the license.
+2. Then it displays a message in which a unique HWID is generated based on the computer data and asks you to enter the `license key`.
 
 3. After that, there are several options for the development of events:
 
-- If the license key is entered correctly, the program displays the message `"Now your app is activated! Thanks for purchasing!"`. Moreover, upon further attempts to launch the program, it will display the message `"Your app is licensed to this PC!"`, which indicates that you have successfully entered the correct license key.
-- If the license key is entered incorrectly, the program will display the message `"Provided key is wrong! App is closing!"`.
+- If the `license key` is entered correctly, the program displays the message `"Now your app is activated! Thanks for purchasing!"`. Moreover, upon further attempts to launch the program, it will display the message `"Your app is licensed to this PC!"`, which indicates that you have successfully entered the correct `license key`.
+- If the `license key` is entered incorrectly, the program will display the message `"Provided key is wrong! App is closing!"`.
 
 4. At the end, the program always outputs the message `"Press Enter to continue..."` and waits for the `Enter` key to be pressed.
