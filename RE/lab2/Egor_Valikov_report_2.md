@@ -276,6 +276,47 @@ Link to the promgram: [`test.py`](https://github.com/zDragonLORD1010/Secure-Syst
 
 First of all, I figured out the file type and analyzed it using **ghidra**. I have attached basic information about the file below:
 
+![image](https://github.com/user-attachments/assets/9e07d2fa-5d80-4fc6-a6f3-4210c81bba73)
+
+![image](https://github.com/user-attachments/assets/acd14520-16a9-4eb6-a168-12ca58268c47)
+
+![image](https://github.com/user-attachments/assets/9c0e80ba-3266-4782-ad07-6c08170638a6)
+
+### Results of the `task_5` application analysis
+
+`task_6` is an ELF executable file. This application did not work on my computer due to library errors related to `pyautogui` (moreover, I did not have the required file `task_4.py`) so I analyzed the entry function and related ones in **ghidra**. `task_6` code is specifically designed to download a Python application that has been packaged using `PyInstaller`. It extracts the necessary files to temporary storage, makes environment settings for the Python interpreter, and executes the Python application package.
+
+### Key components and functionality
+
+**1. Entry point (processEntry)**
+
+- Program calls `__libc_start_main` which is a standard initialization function. It sets up the environment and calls the main program function `thunk_FUN_00403e50`.
+
+**2. The main function of the program (`thunk_FUN_00403e50`)**
+
+- This is the main function that handles the logic of the `PyInstaller` loader. 
+- Initializes various buffers and variables
+- Checks for the presence of the environment variables `_MEIPASS2` and `_PYI_ONEDIR_MODE`
+- Tries to open and check the PyInstaller archive
+- If the environment variable `_PYI_PROCNAME` exists, it sets the Linux process name using `prctl`
+- Controls the extraction of the embedded Python application and its dependencies
+- Sets the temporary directory (`_MEIPASS2`) from which the application will be launched
+- Controls the `onedir` and `onefile` modes in `PyInstaller`
+
+**3. Initialization function (`FUN_004086c0`)**
+
+- This is a constructor function that runs the initialization code before running the main program (It performs an initialization array `__DT_INIT_ARRAY`).
+- **Key functions:**
+- Archive Management
+- Environment management
+- Controls several environment variables:
+  - `_MEIPASS2`: Points to the temporary directory where filesare extracted
+  - `_PYI_ONEDIR_MODE`: Determines whether the program is running in onedir mode
+  - `_PYI_PROCNAME`: Sets the process name in Linux
+- Error handling
+- Memory management
+- Manages the cleaning of temporary resources
+
 ## `task_6`
 
 First of all, I figured out the file type and analyzed it using **ghidra**. I have attached basic information about the file below:
@@ -290,7 +331,7 @@ First of all, I figured out the file type and analyzed it using **ghidra**. I ha
 
 ### Results of the `task_6` application analysis
 
-`task_6` is an ELF executable file. `task_5` is a program for encrypting/decrypting files using a custom algorithm.
+`task_6` is an ELF executable file. `task_6` is a program for encrypting/decrypting files using a custom algorithm.
 
 ### Description of the application operation
 
@@ -352,7 +393,7 @@ applies a sequence of operations to it:
 
 - Outputs the result as binary data
 - For example:
-  - Input:   `H    E    L    L    O`
+  - Input:   `"HELLO"`
   - Output: `05   06   FD   FD   18` (in bytes)
 
 **5. Program termination**
@@ -402,3 +443,7 @@ First of all, I figured out the file type and analyzed it using **ghidra**. I ha
 
 - Program calls `FUN_0045d1a0()`, `FUN_0045d160()`, ect.
 - Most likely, in these functions, the code performs the final configuration of the program.
+
+## Used resoures
+
+Folder with all used resources (screenshots, decryption codes): [tasks](https://github.com/zDragonLORD1010/Secure-System-Development-/tree/main/RE/lab2/tasks)
