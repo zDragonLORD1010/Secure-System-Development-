@@ -163,7 +163,9 @@ The results of my analysis showed the same thing as in the case of `task_2`. How
 
 - `task_3` is part of the Linux kernel module, but in an intermediate stage of compilation.
 
-- `task_3` has initialization (`init_module`), cleanup, and read operations
+- `task_3` has initialization (`init_module`), cleanup, and read operations.
+
+- Module name: `task_8`.
 
 ### Functionality
 
@@ -207,6 +209,8 @@ def decrypt_flag():
     
     return result
 ```
+
+Decrypted flag: `"flag{343b1c4a3ea721b2d640fc8700db0f36}"`
 
 Link to the promgram: [`decrypt.py`](https://github.com/zDragonLORD1010/Secure-System-Development-/blob/main/RE/lab2/tasks/task_3/decrypt.py)
 
@@ -313,6 +317,45 @@ First of all, I figured out the file type and analyzed it using **ghidra**. I ha
 ## `task_7`
 
 First of all, I figured out the file type and analyzed it using **ghidra**. I have attached basic information about the file below:
+
+![image](https://github.com/user-attachments/assets/1bc199c8-88cb-4d11-a240-522aea4d8708)
+
+![image](https://github.com/user-attachments/assets/f4100bd3-2635-4626-a59a-f92606f699e5)
+
+![image](https://github.com/user-attachments/assets/58e74a33-f88b-4111-9652-86221c5041bc)
+
+### Results of the `task_7` application analysis
+
+`task_4` is an ELF executable file. `task_4` is a text encoder program that accepts a text string as an argument.
+
+### Description of the application operation
+
+**1. Start of the program**
+
+- If the program is running correctly, then proceed to the next step.
+- If the application is not running correctly, it displays a message `"Usage: ./task_7 TEXT"`.
+
+**2. Memory allocation**
+
+- The program allocates memory for local variables.
+
+**3. Encrypts the `TEXT`**
+
+- It takes each character of the input text and
+applies a sequence of operations to it:
+  - Adds the character position in the string (ADD)
+  - Performs XOR with the number 14 (0xE)
+  - Applies a mask via AND with the number 31 (0x1F)
+  - Subtracts (position + 1)
+
+**4. Output the result to the console**
+
+- Outputs the result as binary data
+- For example:
+  - Input:   `H    E    L    L    O`
+  - Output: `05   06   FD   FD   18` (in bytes)
+
+**5. Program termination**
 
 ## `task_8`
 
