@@ -326,7 +326,7 @@ First of all, I figured out the file type and analyzed it using **ghidra**. I ha
 
 ### Results of the `task_7` application analysis
 
-`task_4` is an ELF executable file. `task_4` is a text encoder program that accepts a text string as an argument.
+`task_7` is an ELF executable file. `task_7` is a text encoder program that accepts a text string as an argument.
 
 ### Description of the application operation
 
@@ -343,10 +343,10 @@ First of all, I figured out the file type and analyzed it using **ghidra**. I ha
 
 - It takes each character of the input text and
 applies a sequence of operations to it:
-  - Adds the character position in the string (ADD)
-  - Performs XOR with the number 14 (0xE)
-  - Applies a mask via AND with the number 31 (0x1F)
-  - Subtracts (position + 1)
+  - Adds the character position in the string (`ADD`)
+  - Performs `XOR` with the number 14 (`0xE`)
+  - Applies a mask via `AND` with the number 31 (`0x1F`)
+  - Subtracts (`position + 1`)
 
 **4. Output the result to the console**
 
@@ -360,3 +360,45 @@ applies a sequence of operations to it:
 ## `task_8`
 
 First of all, I figured out the file type and analyzed it using **ghidra**. I have attached basic information about the file below:
+
+![image](https://github.com/user-attachments/assets/6227e13d-b668-4958-a9a1-3b5d57ba02bb)
+
+![image](https://github.com/user-attachments/assets/50f34210-4d81-4d32-88dd-52afedd5e3eb)
+
+### Results of the `task_8` application analysis
+
+`task_8` is an ELF executable file. In this program, I discovered an `entry` function and performed a basic analysis based on it, because many other functions are called from the `entry` function, which in turn cause new ones (it's very difficult to analyze everything). Therefore, I think `task_8` may be part of a system-level application or security-related software, given its processor validation. Because it contains the following points:
+
+- CPU verification
+- Stack protection (`in_FS_OFFSET` is typically used for stack protection)
+- Structured error handling 
+- Multiple initialization checks
+
+### Key components and functionality
+
+**1. Collecting information about the processor**
+
+- The code checks the processor information using the CPUID instruction.
+- CPUID with a value of leaf 0 allows you to get basic information about the processor (`piVar1 = (int *)cpuid_basic_info(0)`).
+- Then checks if the processor is Intel by comparing the vendor ID string (`0x756e6547` (`"Genu"`) / `0x49656e69` (`"ineI"`) / `0x6c65746e` (`"ntel"`))
+- If it's an Intel processor, sets `DAT_0054fea9 = 1`
+
+**2. Processor Version Information**\
+
+- Gets CPU version information using CPUID leaf 1 (`puVar2 = (undefined4 *)cpuid_Version_info(1)`).
+- Stores the version info in `DAT_0054ff04`.
+
+**3. Dividing the initialization path**
+
+- The code is then split into two different initialization paths based on `DAT_00520f48`.
+- if `DAT_00520f48` is `NULL`:
+  - Performs some initialization with CPU info.
+  - Checks for a value (`0x123`).
+- if `DAT_00520f48` is not `NULL`:
+  - Calls a function pointer with specific parameters
+  - Sets up some memory offsets
+ 
+**4. Sequential invocation of multiple functions**
+
+- Program calls `FUN_0045d1a0()`, `FUN_0045d160()`, ect.
+- Most likely, in these functions, the code performs the final configuration of the program.
