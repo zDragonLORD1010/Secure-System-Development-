@@ -121,25 +121,23 @@ The `task_2` file is a `relocatable` (relocatable object file), not an executabl
 
 ### Key things
 
-- This is a kernel module, as evidenced by the module metadata present in the file.
+- `task_2` is an ELF 64-bit object file for x86-64 architecture.
 
 - The module has a built-in flag: `"flag{baee49fd4f7009ff6e932463791f28e6}"`.
 
 - Module name: `task_7`.
 
-- Contains sections typical for a kernel module (`.text`, `.rodata`, `.modinfo`, etc.).
-
 - Has some string data: `"Hello!"` and `"Bye-bye :("`.
 
 ### Functionality
 
-- This is a simple Linux kernel module that implements the basic functionality of outputting.
+- `task_2` implements the basic functionality of outputting.
 
 - `"Hello!"` message is output when the module is loaded.
 
 - `"Bye-bye :("` message is output when the module is unloaded.
 
-- It's using the `printk` function which is the kernel's version of for logging
+- It's using the `printk` function for logging
 
 ## `task_3`
 
@@ -156,6 +154,61 @@ I have the same difficulties with this program as with `task_2` because they are
 ### Results of the `task_3` application analysis
 
 The results of my analysis showed the same thing as in the case of `task_2`. However, I found some interesting facts for the `task_3` file. It is associated with `task_8` (`name=task_8`) and the string `"rEdWcNDya..."` it is most likely encrypted data (most likely it is a flag).
+
+### Key things
+
+- `task_3` is an ELF 64-bit object file for x86-64 architecture.
+
+- The file is not stripped.
+
+- `task_3` is part of the Linux kernel module, but in an intermediate stage of compilation.
+
+- `task_3` has initialization (`init_module`), cleanup, and read operations
+
+### Functionality
+
+**1. `init_module` function:**
+
+- Registers a symbolic device.
+
+- Creates a device class and a device node.
+
+- Handles errors.
+
+**2. `intro_read` function**
+
+- Allocates `0x26` (38) bytes of memory via `vmalloc`.
+
+- Implements XOR decryption:
+
+- Uses two arrays:
+  - `crypted` - first XOR key
+  - `"rEdWcNDyavDSNOdKOC95iTEP8bioF3IPmAKUXx"` - second XOR key
+
+- The result is copied to the user space.
+
+### How can I get the flag?
+
+I analyzed `task_3` using the `objdump` command and found 2 keys, wrote a little python code and successfully decoded the flag:
+
+![image](https://github.com/user-attachments/assets/e830dfd2-cc5f-4bf5-b072-7a2c94aa2074)
+
+![image](https://github.com/user-attachments/assets/c1f16419-9e06-4041-bb49-26a21cac96ad)
+
+```py
+def decrypt_flag():
+    if len(crypted) != len(flag):
+        print(f"Warning: Length mismatch! crypted: {len(crypted)}, key2: {len(key2)}")
+        
+    result = ""
+    for i in range(min(len(crypted), len(flag))):
+        decrypted_char = chr(crypted[i] ^ ord(flag[i]))
+        result += decrypted_char
+    
+    return result
+```
+
+Link to the promgram: [`decrypt.py`](https://github.com/zDragonLORD1010/Secure-System-Development-/blob/main/RE/lab2/tasks/task_3/decrypt.py)
 
 ## `task_4`
 
