@@ -105,7 +105,7 @@ First of all, I figured out the file type and analyzed it using **ghidra**. I ha
 
 ## `task_2`
 
-I had some problems with this task, so I analyzed it without running it. The ldd team did not provide any concrete results. However, I was able to look at the file characteristics in more detail through ghidra.
+I had some problems with this task, so I analyzed it without running it. The `ldd` command did not provide any concrete results. However, I was able to look at the file characteristics in more detail through ghidra.
 
 ![image](https://github.com/user-attachments/assets/9c8d9636-cc73-454d-9143-92b394f3c98b)
 
@@ -118,6 +118,28 @@ I had some problems with this task, so I analyzed it without running it. The ldd
 ### Results of the `task_2` application analysis
 
 The `task_2` file is a `relocatable` (relocatable object file), not an executable, so there are no dynamic dependencies in it. This is most likely a Linux kernel object file, which explains the absence of the `main` function (`init_module` is used), as well as the presence of sections `.gnu.linkonce`, `__versions`, `.modinfo`. However, among the interesting findings, I discovered the flag (`license=flag{baee49fd4f7009ff6e932463791f28e6}`) using command `strings`. And also found out that this file is associated with `task_7` (`name=task_7`).
+
+### Key things
+
+- This is a kernel module, as evidenced by the module metadata present in the file.
+
+- The module has a built-in flag: `"flag{baee49fd4f7009ff6e932463791f28e6}"`.
+
+- Module name: `task_7`.
+
+- Contains sections typical for a kernel module (`.text`, `.rodata`, `.modinfo`, etc.).
+
+- Has some string data: `"Hello!"` and `"Bye-bye :("`.
+
+### Functionality
+
+- This is a simple Linux kernel module that implements the basic functionality of outputting.
+
+- `"Hello!"` message is output when the module is loaded.
+
+- `"Bye-bye :("` message is output when the module is unloaded.
+
+- It's using the `printk` function which is the kernel's version of for logging
 
 ## `task_3`
 
