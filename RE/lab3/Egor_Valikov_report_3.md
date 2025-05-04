@@ -99,3 +99,7 @@ It shows that the same data is encrypted and decrypted several times alternately
 
 - The combined data (left + right parts) are rearranged according to the `DAT_00404060` table.
 - The result is stored in `local_58` and returned by the function.
+
+## Сonclusion
+
+I believe that in the application `1.exe` an encryption algorithm based on **DES** is used, probably with some modifications. The `FUN_00401550` function implements an algorithm structurally and operationally identical to **DES**. The data in `DAT_00404020` and other similar addresses are most likely **permutation tables** and **S-blocks**.
