@@ -121,13 +121,13 @@ This is a 32-bit ELF file, an executable file for Unix-like systems. This is a s
   - `##        Bienvennue dans ce challenge de cracking        ##`
   - `############################################################`
 - After that, the program asks you to enter your `username`:
-  - `username:`
+  - `"username:"`
 
 **2. Reading `username` and comparing**
 
 - The program reads the `username` and compares it with `"john"` (`strcmp(pcVar1,"john")`).
 - If the input is correct, the application prompts you to enter a `password`:
-  - The program outputs a message `password`.
+  - The program outputs a message `"password:"`.
 - If not correct, the program outputs a message `"Bad username"`.
 
 **3. Reading `password` and comparing**
