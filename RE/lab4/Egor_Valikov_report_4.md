@@ -18,7 +18,11 @@ In this lab, I have to figure out 2 applications, explain how they work and desc
 
 First of all, I figured out the file type and analyzed it using **ghidra**. I have attached basic information about the file below:
 
-img
+![image](https://github.com/user-attachments/assets/de7a82bd-975a-4c73-9c13-6aeff8d3b2e5)
+
+![image](https://github.com/user-attachments/assets/b96ddb3f-5be6-4e43-8513-cf8b467e0c47)
+
+![image](https://github.com/user-attachments/assets/21870c48-47a1-4984-9f21-b767f013817f)
 
 ### Results of the `ch25.bin` application analysis
 
@@ -90,17 +94,19 @@ for i in range(len(input_bytes) - 1):
     password += chr(xor_byte)
 ```
 
-img
+![image](https://github.com/user-attachments/assets/6daa6bac-5af0-4b58-a380-a24c5bada084)
 
 The received password: `"Here_you_have_to_understand_a_little_C++_stuffs"`
 
-The full program code can be found at the link: [`decrypt.py`]()
+The full program code can be found at the link: [`decrypt.py`](https://github.com/zDragonLORD1010/Secure-System-Development-/blob/main/RE/lab4/tasks/task_1/decrypt_1.py)
 
 ## `ch2.bin`
 
 First of all, I figured out the file type and analyzed it using **ghidra**. I have attached basic information about the file below:
 
-img
+![image](https://github.com/user-attachments/assets/25cd820e-224a-45b6-af74-8e1a4a697e3c)
+
+![image](https://github.com/user-attachments/assets/172b0001-bbb6-4fc2-af12-47b7a4a69ee7)
 
 ### Results of the `ch2.bin` application analysis
 
@@ -138,8 +144,8 @@ This is a 32-bit ELF file, an executable file for Unix-like systems. This is a s
 
 Here I have demonstrated all possible output options of the program:
 
-img
+![image](https://github.com/user-attachments/assets/28f7929b-1a7d-4432-ae46-404fcb488ba7)
 
 ## Used resoures
 
-Folder with all used resources (screenshots, decryption codes): [tasks]()
+Folder with all used resources (screenshots, decryption codes): [tasks](https://github.com/zDragonLORD1010/Secure-System-Development-/tree/main/RE/lab4/tasks)
