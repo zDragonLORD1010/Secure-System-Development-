@@ -16,7 +16,7 @@ In this lab, I will study the assembled binaries with instrumentation and study 
 
 ## Analysis of AFL instrumentation in a compiled binary
 
-For this lab work, I took a binary file `json_fuzz_basic` created earlier using afl.
+For this lab work, I took a binary file `json_fuzz_basic` created earlier using afl. Earlier, I described in more detail how the file was created and what problems are associated with it (I have attached a link to the previous report below). Therefore, in this lab I will try to describe what I have not touched on before.
 
 **Link to the previous lab "Fuzzing a JSON-parser with AFL":** [`Egor_Valikov_RE_lab5`](https://github.com/zDragonLORD1010/Secure-System-Development-/blob/main/RE/lab5/Egor_Valikov_report_5.md)
 
