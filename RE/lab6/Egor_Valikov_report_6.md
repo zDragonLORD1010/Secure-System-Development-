@@ -53,11 +53,28 @@ During compilation from `afl-gcc`, some changes occur in the binary. Let's look 
 
 **2. Technical changes**
 
-- The file size increased from 36.0 KB (the sum of initial file sizes) to 96.8 KB (`json_fuzz_basic`).
+- The file size increased from 36.0KB (the sum of initial file sizes) to 96.8KB (`json_fuzz_basic`).
 - The number of sections in the file has not changed (the `readelf` command did not show any output, what indicates that there are no new changes).
 - The number of characters has increased (which is logical and follows from the first paragraph)
 
+**3. Practical impact**
 
+- A slight slowdown in operation.
+- Additional memory consumption (64KB + AFL structures).
+- Periodic occurrence of errors or false positives such as:
+  - `free(): invalid pointer`.
+  - `Segmentation fault`.
+  - Some differect crashes.
+- *p.s. I described these errors in more detail in a previous lab: [`Egor_Valikov_RE_lab5`](https://github.com/zDragonLORD1010/Secure-System-Development-/blob/main/RE/lab5/Egor_Valikov_report_5.md)*
 
+## Used resourses:
 
+Link to the **basic** file: [`json_fuzz_basic`](https://github.com/zDragonLORD1010/Secure-System-Development-/blob/main/RE/lab5/data/json_fuzz_basic)
 
+Folder with all crashes for **basic**: [`basic/crashes`](https://github.com/zDragonLORD1010/Secure-System-Development-/tree/main/RE/lab5/data/outputs/basic/crashes)
+
+Folder with screenshots: [`img`](https://github.com/zDragonLORD1010/Secure-System-Development-/tree/main/RE/lab5/img)
+
+Folder with all used data: [`data`](https://github.com/zDragonLORD1010/Secure-System-Development-/tree/main/RE/lab5/data)
+
+**Link to the previous lab "Fuzzing a JSON-parser with AFL":** [`Egor_Valikov_RE_lab5`](https://github.com/zDragonLORD1010/Secure-System-Development-/blob/main/RE/lab5/Egor_Valikov_report_5.md)
