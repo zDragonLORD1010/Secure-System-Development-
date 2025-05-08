@@ -186,6 +186,8 @@ void print_usage() {
 }
 ```
 
+The full code can be found at the link: [`kernel_stack.c`](https://github.com/zDragonLORD1010/Secure-System-Development-/blob/main/AL_lab4/data/kernel_stack.c)
+
 ### Checking the `kernel_stack`
 
 ![image](https://github.com/user-attachments/assets/138ebf46-7688-4c04-8b9b-2038858cac2d)
@@ -198,3 +200,18 @@ The only difference from the expected output is the output after the `echo $?` c
 
 ![image](https://github.com/user-attachments/assets/9d190bac-abac-4920-8bf9-5e77a07acda8)
 
+## Used resources
+
+The full code of `int_stack` at the link: [`int_stack.c`](https://github.com/zDragonLORD1010/Secure-System-Development-/blob/main/AL_lab4/data/int_stack.c)
+
+Link to the code of `Makefile`: [`Makefile`](https://github.com/zDragonLORD1010/Secure-System-Development-/blob/main/AL_lab4/data/Makefile)
+
+The full code of ``kernel_stack.c` at the link: [`kernel_stack.c`](https://github.com/zDragonLORD1010/Secure-System-Development-/blob/main/AL_lab4/data/kernel_stack.c)
+
+Link to the **push/pop** test: [`test_push_pop.c`](https://github.com/zDragonLORD1010/Secure-System-Development-/blob/main/AL_lab4/data/test_push_pop.c)
+
+Link to the **ioctl** test: [`test_ioctl.c`](https://github.com/zDragonLORD1010/Secure-System-Development-/blob/main/AL_lab4/data/test_ioctl.c)
+
+Folder with all codes: [`data`](https://github.com/zDragonLORD1010/Secure-System-Development-/tree/main/AL_lab4/data)
+
+Folder with all screenshots: [`img`](https://github.com/zDragonLORD1010/Secure-System-Development-/tree/main/AL_lab4/img)
