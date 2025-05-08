@@ -94,7 +94,7 @@ static ssize_t write_op(struct file *file, const char __user *buf, size_t len, l
 }
 ```
 
-### `ioctl(` - configure max stack size
+### `ioctl()` - configure max stack size
 
 ```c
 // `ioctl` operation
