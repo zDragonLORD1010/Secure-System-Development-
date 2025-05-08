@@ -206,7 +206,7 @@ The full code of `int_stack` at the link: [`int_stack.c`](https://github.com/zDr
 
 Link to the code of `Makefile`: [`Makefile`](https://github.com/zDragonLORD1010/Secure-System-Development-/blob/main/AL_lab4/data/Makefile)
 
-The full code of ``kernel_stack.c` at the link: [`kernel_stack.c`](https://github.com/zDragonLORD1010/Secure-System-Development-/blob/main/AL_lab4/data/kernel_stack.c)
+The full code of `kernel_stack.c` at the link: [`kernel_stack.c`](https://github.com/zDragonLORD1010/Secure-System-Development-/blob/main/AL_lab4/data/kernel_stack.c)
 
 Link to the **push/pop** test: [`test_push_pop.c`](https://github.com/zDragonLORD1010/Secure-System-Development-/blob/main/AL_lab4/data/test_push_pop.c)
 
