@@ -98,10 +98,9 @@ In conclusion, I would like to say that all versions worked well. Everyone ident
 
 | Criteria | ASAN | UBSAN | MSAN | 
 |--------------------|----------------------------------------|----------------------------------------|----------------------------------------|
-| Primary Purpose | Use-after-free, Buffer overflows, Memory leaks, Stack/heap corruption | Integer overflow, Null pointer dereference, Invalid type casts, Misaligned pointers | Reading uninitialized variables, Uninitialized stack/heap memory |
+| Primary Purpose | Memory safety bugs | Undefined behavior in code | Uninitialized memory reads |
+| Detects | Use-after-free, Buffer overflows, Memory leaks, Stack/heap corruption | Integer overflow, Null pointer dereference, Invalid type casts, Misaligned pointers | Reading uninitialized variables, Uninitialized stack/heap memory |
 | Performance  | Average in speed, but high in memory cost | The fastest of all | The slowest, requires full program instrumentation |
-| Best For | Detecting memory corruption bugs | 	Finding logic errors and unpredictable behavior in code |	Security-critical code where uninitialized reads are dangerous |
-
 
 ## Used resourses
 
@@ -114,6 +113,10 @@ ASAN crash reports folder: [`crashes_asan`](https://github.com/zDragonLORD1010/S
 UBSAN crash reports folder: [`crashes_ubsan`](https://github.com/zDragonLORD1010/Secure-System-Development-/tree/main/RE/lab8/data/crashes_ubsan)
 
 MSAN crash reports folder: [`crashes_msan`](https://github.com/zDragonLORD1010/Secure-System-Development-/tree/main/RE/lab8/data/crashes_msan)
+
+Link to the folder with all the data: [`data`](https://github.com/zDragonLORD1010/Secure-System-Development-/tree/main/RE/lab8/data)
+
+Link to the folder with all screenshots: [`img`](https://github.com/zDragonLORD1010/Secure-System-Development-/tree/main/RE/lab8/img)
 
 
 
