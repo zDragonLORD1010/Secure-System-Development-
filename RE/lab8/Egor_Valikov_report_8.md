@@ -88,9 +88,9 @@ Despite the fact that all sanitizers showed one error, everyone described it in 
 
 **Behavior across sanitizers:**
 
-**ASAN:** Detected as memory access violation.
-**UBSAN**: Detected as undefined behavior (invalid memory access).
-**MSAN:** Also detected the crash but with less detailed output.
+- **ASAN:** Detected as memory access violation.
+- **UBSAN**: Detected as undefined behavior (invalid memory access).
+- **MSAN:** Also detected the crash but with less detailed output.
 
 ## Conclusion
 
