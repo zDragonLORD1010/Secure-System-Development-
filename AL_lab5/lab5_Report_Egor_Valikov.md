@@ -138,6 +138,8 @@ The full code can be found at the link: [`kernel_stack.c`](https://github.com/zD
 
 ## Used resources
 
+Link to the previous lab: [**Lab 4 - Kernel Modules**](https://github.com/zDragonLORD1010/Secure-System-Development-/blob/main/AL_lab4/lab4_Report_Egor_Valikov.md)
+
 The full code of int_stack at the link: [`int_stack.c`](https://github.com/zDragonLORD1010/Secure-System-Development-/blob/main/AL_lab5/data/int_stack.c)
 
 Link to the code of Makefile: [`Makefile`](https://github.com/zDragonLORD1010/Secure-System-Development-/blob/main/AL_lab5/data/Makefile)
