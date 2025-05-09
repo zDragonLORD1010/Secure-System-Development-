@@ -105,7 +105,7 @@ int push_value(int value) {
     if (ret < 0) {
         if (errno == ERANGE) {
             fprintf(stderr, "ERROR: stack is full\n");
-            return ERANGE;
+            return -ERANGE;
         }
         perror("ERROR: write failed");
         return EXIT_FAILURE;
