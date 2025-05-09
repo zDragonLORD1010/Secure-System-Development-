@@ -69,9 +69,9 @@ MSAN crash reports folder: [`crashes_msan`](https://github.com/zDragonLORD1010/S
 
 ### Run MSAN fuzzer:
 
-![image](https://github.com/user-attachments/assets/7510fb2e-68f5-4a5e-8d7a-3b8c432dbf82)
+![image](https://github.com/user-attachments/assets/1b784f08-5a99-4a39-a3ee-11eb0e1d148d)
 
-![image](https://github.com/user-attachments/assets/6c05ee55-c6ae-4867-abcf-136c5abb7d2c)
+![image](https://github.com/user-attachments/assets/9b20e1b2-10e4-407e-ad6b-756829d7459e)
 
 ### Analysis
 
