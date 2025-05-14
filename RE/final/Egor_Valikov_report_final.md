@@ -217,3 +217,49 @@ Decoded full flag: `"I never broke the encoding: I_a_M_t_h_e_e_n_C_o_D_i_n_g@fla
 
 The full decryption program can be found at the link: [`decode.py`](https://github.com/zDragonLORD1010/Secure-System-Development-/blob/main/RE/final/decode.py)
 
+## Patch for the `1.exe`
+
+I decided to delve into the program in more detail `1.exe` and find out why the message is not displayed in full. After analyzing ghidra, I found a string with the address `0x004011c9`, which indicates that the program outputs `0x1C` (28) bytes. So I wrote a little code to change this line so that the program outputs a full message. I changed `0x1C` to `0xFF` (process up to 255 bytes or until null):
+
+```py
+def patch(input_path, output_path):
+    with open(input_path, 'rb') as f:
+        data = bytearray(f.read())
+    
+    # This appears at address 0x004011c9 in Ghidra
+    pattern = bytes.fromhex('6A 1C 68 08 20 40 00')
+    pos = data.find(pattern)
+    
+    if pos == -1:
+        raise ValueError("Error")
+    
+    # Patch: Change 0x1C (28 bytes) to 0xFF (process up to 255 bytes or until null)
+    data[pos + 1] = 0xFF
+    
+    # Write in file
+    with open(output_path, 'wb') as f:
+        f.write(data)
+    print(f"Successfully patched: {output_path}")
+
+patch('1.exe', '1_patched.exe')
+```
+
+![image](https://github.com/user-attachments/assets/b7eff6ce-3564-4276-896e-eb1fb3d31373)
+
+The full program code can be found at the link: [`patch.py`](https://github.com/zDragonLORD1010/Secure-System-Development-/blob/main/RE/final/patch.py)
+
+I ran this program and made sure that the flag is now fully displayed:
+
+![image](https://github.com/user-attachments/assets/cb0c8619-6925-4cee-9a39-2aa50aa97d6a)
+
+The patched program `1_patched.exe` can be found at the link: [`1_patched.exe`](https://github.com/zDragonLORD1010/Secure-System-Development-/blob/main/RE/final/1_patched.exe)
+
+## Used resourses
+
+The full decryption program can be found at the link: [`decode.py`](https://github.com/zDragonLORD1010/Secure-System-Development-/blob/main/RE/final/decode.py)
+
+The full patch program code can be found at the link: [`patch.py`](https://github.com/zDragonLORD1010/Secure-System-Development-/blob/main/RE/final/patch.py)
+
+The patched program `1_patched.exe` can be found at the link: [`1_patched.exe`](https://github.com/zDragonLORD1010/Secure-System-Development-/blob/main/RE/final/1_patched.exe)
+
+Folder with all screenshots: [`img`](https://github.com/zDragonLORD1010/Secure-System-Development-/tree/main/RE/final/img)
