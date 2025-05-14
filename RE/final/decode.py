@@ -8,7 +8,7 @@ def decode(input_bytes):
             if i + 3 >= len(input_bytes):
                 break
             decoded = ((input_bytes[i + 2] & 0x3F) << 6) | (input_bytes[i + 3] & 0x3F)
-            output.append(decoded & 0xFF)  # Truncate to 1 byte
+            output.append(decoded & 0xFF)
             i += 4
             
         elif (byte >> 4) == 0b1110:
