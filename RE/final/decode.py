@@ -6,7 +6,7 @@ def decode(input_bytes):
         
         if (byte >> 3) == 0b11110:
             if i + 3 >= len(input_bytes):
-                break  # Incomplete sequence
+                break
             decoded = ((input_bytes[i + 2] & 0x3F) << 6) | (input_bytes[i + 3] & 0x3F)
             output.append(decoded & 0xFF)  # Truncate to 1 byte
             i += 4
