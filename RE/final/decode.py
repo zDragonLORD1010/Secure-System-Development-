@@ -4,7 +4,6 @@ def decode_utf8_custom(input_bytes):
     while i < len(input_bytes):
         byte = input_bytes[i]
         
-        # 4-byte sequence (11110xxx)
         if (byte >> 3) == 0b11110:
             if i + 3 >= len(input_bytes):
                 break  # Incomplete sequence
@@ -12,7 +11,6 @@ def decode_utf8_custom(input_bytes):
             output.append(decoded & 0xFF)  # Truncate to 1 byte
             i += 4
             
-        # 3-byte sequence (1110xxxx)
         elif (byte >> 4) == 0b1110:
             if i + 2 >= len(input_bytes):
                 break
@@ -20,7 +18,6 @@ def decode_utf8_custom(input_bytes):
             output.append(decoded & 0xFF)
             i += 3
             
-        # 2-byte sequence (110xxxxx)
         elif (byte >> 5) == 0b110:
             if i + 1 >= len(input_bytes):
                 break
@@ -28,18 +25,16 @@ def decode_utf8_custom(input_bytes):
             output.append(decoded & 0xFF)
             i += 2
             
-        # 1-byte ASCII (0xxxxxxx)
         else:
             output.append(byte)
             i += 1
             
-        # Stop at null terminator
         if output and output[-1] == 0:
             break
             
     return bytes(output)
 
-# Raw bytes from DAT_00402008 (first 28 bytes)
+# Bytes from DAT_00402008
 encoded_data = bytes([
 0xe0, 0x81, 0x89, 0xc0, 0xa0, 0xc1, 0xae, 0xe0, 0x81, 0xa5, 0xc1, 0xb6,
 0xf0, 0x80, 0x81, 0xa5, 0xe0, 0x81, 0xb2, 0xf0, 0x80, 0x80, 0xa0, 0xe0,
@@ -58,6 +53,6 @@ encoded_data = bytes([
 0x81, 0xa3, 0x6f, 0xf0, 0x80, 0x81, 0xad, 0x00
 ])
 
-# Decode and print
+# Decode
 decoded = decode_utf8_custom(encoded_data)
 print("Decoded:", decoded.decode('ascii', errors='replace'))
