@@ -1,4 +1,4 @@
-def decode_utf8_custom(input_bytes):
+def decode(input_bytes):
     output = []
     i = 0
     while i < len(input_bytes):
@@ -54,5 +54,5 @@ encoded_data = bytes([
 ])
 
 # Decode
-decoded = decode_utf8_custom(encoded_data)
+decoded = decode(encoded_data)
 print("Decoded:", decoded.decode('ascii', errors='replace'))
