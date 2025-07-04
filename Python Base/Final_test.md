@@ -264,3 +264,48 @@ b.sort()
 for i in range(len(b)):
     print(b[i], end= " ")
 ```
+
+## Группа С
+
+### Задание 1
+
+![image](https://github.com/user-attachments/assets/b9312447-850d-42a3-8bb2-35770d906d95)
+
+```py
+def printa(n, m):
+    for i in range(n):
+        print("*"*m)
+
+n = int(input())
+m = int(input())
+printa(n, m)
+```
+
+### Задание 2
+
+![image](https://github.com/user-attachments/assets/55d58d7c-a2ed-4065-a079-2bd3e6b25212)
+
+```py
+# Ввод НЕ МЕНЯТЬ
+n = int(input())
+students = []
+for i in range(n):
+    names = {}
+    name, surname, years = input().split()
+    names['name'], names['surname'], names['years'] = name, surname, int(years)
+    students.append(names)
+
+# В массиве students хранятся словари
+# Например:
+# students = [
+#     {'name': 'Ivan', 'surname' : 'Ivanov', 'years' : '15'},
+#     {'name': 'Sasha', 'surname' : 'Pupkin', 'years' : '17'}
+# ]
+
+# Напишите ваш код здесь
+
+
+for i in range(len(students)):
+    print("B", 2025 - students[i]['years'], "году родился", students[i]['name'])
+```
+
